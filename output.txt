@@ -1,0 +1,607 @@
+./examples/expression.rs
+File {
+    shebang: None,
+    attrs: [],
+    items: [
+        Item::Fn {
+            attrs: [],
+            vis: Visibility::Inherited,
+            sig: Signature {
+                constness: None,
+                asyncness: None,
+                unsafety: None,
+                abi: None,
+                fn_token: Fn,
+                ident: Ident(
+                    main,
+                ),
+                generics: Generics {
+                    lt_token: None,
+                    params: [],
+                    gt_token: None,
+                    where_clause: None,
+                },
+                paren_token: Paren,
+                inputs: [],
+                variadic: None,
+                output: ReturnType::Default,
+            },
+            block: Block {
+                brace_token: Brace,
+                stmts: [
+                    Stmt::Local {
+                        attrs: [],
+                        let_token: Let,
+                        pat: Pat::Ident {
+                            attrs: [],
+                            by_ref: None,
+                            mutability: None,
+                            ident: Ident(
+                                x,
+                            ),
+                            subpat: None,
+                        },
+                        init: Some(
+                            LocalInit {
+                                eq_token: Eq,
+                                expr: Expr::Lit {
+                                    attrs: [],
+                                    lit: Lit::Int {
+                                        token: 5u32,
+                                    },
+                                },
+                                diverge: None,
+                            },
+                        ),
+                        semi_token: Semi,
+                    },
+                    Stmt::Local {
+                        attrs: [],
+                        let_token: Let,
+                        pat: Pat::Ident {
+                            attrs: [],
+                            by_ref: None,
+                            mutability: None,
+                            ident: Ident(
+                                y,
+                            ),
+                            subpat: None,
+                        },
+                        init: Some(
+                            LocalInit {
+                                eq_token: Eq,
+                                expr: Expr::Block {
+                                    attrs: [],
+                                    label: None,
+                                    block: Block {
+                                        brace_token: Brace,
+                                        stmts: [
+                                            Stmt::Local {
+                                                attrs: [],
+                                                let_token: Let,
+                                                pat: Pat::Ident {
+                                                    attrs: [],
+                                                    by_ref: None,
+                                                    mutability: None,
+                                                    ident: Ident(
+                                                        x_squared,
+                                                    ),
+                                                    subpat: None,
+                                                },
+                                                init: Some(
+                                                    LocalInit {
+                                                        eq_token: Eq,
+                                                        expr: Expr::Binary {
+                                                            attrs: [],
+                                                            left: Expr::Path {
+                                                                attrs: [],
+                                                                qself: None,
+                                                                path: Path {
+                                                                    leading_colon: None,
+                                                                    segments: [
+                                                                        PathSegment {
+                                                                            ident: Ident(
+                                                                                x,
+                                                                            ),
+                                                                            arguments: PathArguments::None,
+                                                                        },
+                                                                    ],
+                                                                },
+                                                            },
+                                                            op: BinOp::Mul(
+                                                                Star,
+                                                            ),
+                                                            right: Expr::Path {
+                                                                attrs: [],
+                                                                qself: None,
+                                                                path: Path {
+                                                                    leading_colon: None,
+                                                                    segments: [
+                                                                        PathSegment {
+                                                                            ident: Ident(
+                                                                                x,
+                                                                            ),
+                                                                            arguments: PathArguments::None,
+                                                                        },
+                                                                    ],
+                                                                },
+                                                            },
+                                                        },
+                                                        diverge: None,
+                                                    },
+                                                ),
+                                                semi_token: Semi,
+                                            },
+                                            Stmt::Local {
+                                                attrs: [],
+                                                let_token: Let,
+                                                pat: Pat::Ident {
+                                                    attrs: [],
+                                                    by_ref: None,
+                                                    mutability: None,
+                                                    ident: Ident(
+                                                        x_cube,
+                                                    ),
+                                                    subpat: None,
+                                                },
+                                                init: Some(
+                                                    LocalInit {
+                                                        eq_token: Eq,
+                                                        expr: Expr::Binary {
+                                                            attrs: [],
+                                                            left: Expr::Path {
+                                                                attrs: [],
+                                                                qself: None,
+                                                                path: Path {
+                                                                    leading_colon: None,
+                                                                    segments: [
+                                                                        PathSegment {
+                                                                            ident: Ident(
+                                                                                x_squared,
+                                                                            ),
+                                                                            arguments: PathArguments::None,
+                                                                        },
+                                                                    ],
+                                                                },
+                                                            },
+                                                            op: BinOp::Mul(
+                                                                Star,
+                                                            ),
+                                                            right: Expr::Path {
+                                                                attrs: [],
+                                                                qself: None,
+                                                                path: Path {
+                                                                    leading_colon: None,
+                                                                    segments: [
+                                                                        PathSegment {
+                                                                            ident: Ident(
+                                                                                x,
+                                                                            ),
+                                                                            arguments: PathArguments::None,
+                                                                        },
+                                                                    ],
+                                                                },
+                                                            },
+                                                        },
+                                                        diverge: None,
+                                                    },
+                                                ),
+                                                semi_token: Semi,
+                                            },
+                                            Stmt::Expr(
+                                                Expr::Binary {
+                                                    attrs: [],
+                                                    left: Expr::Binary {
+                                                        attrs: [],
+                                                        left: Expr::Path {
+                                                            attrs: [],
+                                                            qself: None,
+                                                            path: Path {
+                                                                leading_colon: None,
+                                                                segments: [
+                                                                    PathSegment {
+                                                                        ident: Ident(
+                                                                            x_cube,
+                                                                        ),
+                                                                        arguments: PathArguments::None,
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        op: BinOp::Add(
+                                                            Plus,
+                                                        ),
+                                                        right: Expr::Path {
+                                                            attrs: [],
+                                                            qself: None,
+                                                            path: Path {
+                                                                leading_colon: None,
+                                                                segments: [
+                                                                    PathSegment {
+                                                                        ident: Ident(
+                                                                            x_squared,
+                                                                        ),
+                                                                        arguments: PathArguments::None,
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                    },
+                                                    op: BinOp::Add(
+                                                        Plus,
+                                                    ),
+                                                    right: Expr::Path {
+                                                        attrs: [],
+                                                        qself: None,
+                                                        path: Path {
+                                                            leading_colon: None,
+                                                            segments: [
+                                                                PathSegment {
+                                                                    ident: Ident(
+                                                                        x,
+                                                                    ),
+                                                                    arguments: PathArguments::None,
+                                                                },
+                                                            ],
+                                                        },
+                                                    },
+                                                },
+                                                None,
+                                            ),
+                                        ],
+                                    },
+                                },
+                                diverge: None,
+                            },
+                        ),
+                        semi_token: Semi,
+                    },
+                    Stmt::Local {
+                        attrs: [],
+                        let_token: Let,
+                        pat: Pat::Ident {
+                            attrs: [],
+                            by_ref: None,
+                            mutability: None,
+                            ident: Ident(
+                                z,
+                            ),
+                            subpat: None,
+                        },
+                        init: Some(
+                            LocalInit {
+                                eq_token: Eq,
+                                expr: Expr::Block {
+                                    attrs: [],
+                                    label: None,
+                                    block: Block {
+                                        brace_token: Brace,
+                                        stmts: [
+                                            Stmt::Expr(
+                                                Expr::Binary {
+                                                    attrs: [],
+                                                    left: Expr::Lit {
+                                                        attrs: [],
+                                                        lit: Lit::Int {
+                                                            token: 2,
+                                                        },
+                                                    },
+                                                    op: BinOp::Mul(
+                                                        Star,
+                                                    ),
+                                                    right: Expr::Path {
+                                                        attrs: [],
+                                                        qself: None,
+                                                        path: Path {
+                                                            leading_colon: None,
+                                                            segments: [
+                                                                PathSegment {
+                                                                    ident: Ident(
+                                                                        x,
+                                                                    ),
+                                                                    arguments: PathArguments::None,
+                                                                },
+                                                            ],
+                                                        },
+                                                    },
+                                                },
+                                                Some(
+                                                    Semi,
+                                                ),
+                                            ),
+                                        ],
+                                    },
+                                },
+                                diverge: None,
+                            },
+                        ),
+                        semi_token: Semi,
+                    },
+                    Stmt::Macro {
+                        attrs: [],
+                        mac: Macro {
+                            path: Path {
+                                leading_colon: None,
+                                segments: [
+                                    PathSegment {
+                                        ident: Ident(
+                                            println,
+                                        ),
+                                        arguments: PathArguments::None,
+                                    },
+                                ],
+                            },
+                            bang_token: Not,
+                            delimiter: MacroDelimiter::Paren(
+                                Paren,
+                            ),
+                            tokens: TokenStream [
+                                Literal {
+                                    lit: "x is {:?}",
+                                },
+                                Punct {
+                                    char: ',',
+                                    spacing: Alone,
+                                },
+                                Ident {
+                                    sym: x,
+                                },
+                            ],
+                        },
+                        semi_token: Some(
+                            Semi,
+                        ),
+                    },
+                    Stmt::Macro {
+                        attrs: [],
+                        mac: Macro {
+                            path: Path {
+                                leading_colon: None,
+                                segments: [
+                                    PathSegment {
+                                        ident: Ident(
+                                            println,
+                                        ),
+                                        arguments: PathArguments::None,
+                                    },
+                                ],
+                            },
+                            bang_token: Not,
+                            delimiter: MacroDelimiter::Paren(
+                                Paren,
+                            ),
+                            tokens: TokenStream [
+                                Literal {
+                                    lit: "y is {:?}",
+                                },
+                                Punct {
+                                    char: ',',
+                                    spacing: Alone,
+                                },
+                                Ident {
+                                    sym: y,
+                                },
+                            ],
+                        },
+                        semi_token: Some(
+                            Semi,
+                        ),
+                    },
+                    Stmt::Macro {
+                        attrs: [],
+                        mac: Macro {
+                            path: Path {
+                                leading_colon: None,
+                                segments: [
+                                    PathSegment {
+                                        ident: Ident(
+                                            println,
+                                        ),
+                                        arguments: PathArguments::None,
+                                    },
+                                ],
+                            },
+                            bang_token: Not,
+                            delimiter: MacroDelimiter::Paren(
+                                Paren,
+                            ),
+                            tokens: TokenStream [
+                                Literal {
+                                    lit: "z is {:?}",
+                                },
+                                Punct {
+                                    char: ',',
+                                    spacing: Alone,
+                                },
+                                Ident {
+                                    sym: z,
+                                },
+                            ],
+                        },
+                        semi_token: Some(
+                            Semi,
+                        ),
+                    },
+                ],
+            },
+        },
+    ],
+}
+./examples/hello.rs
+File {
+    shebang: None,
+    attrs: [],
+    items: [
+        Item::Fn {
+            attrs: [],
+            vis: Visibility::Inherited,
+            sig: Signature {
+                constness: None,
+                asyncness: None,
+                unsafety: None,
+                abi: None,
+                fn_token: Fn,
+                ident: Ident(
+                    main,
+                ),
+                generics: Generics {
+                    lt_token: None,
+                    params: [],
+                    gt_token: None,
+                    where_clause: None,
+                },
+                paren_token: Paren,
+                inputs: [],
+                variadic: None,
+                output: ReturnType::Default,
+            },
+            block: Block {
+                brace_token: Brace,
+                stmts: [
+                    Stmt::Macro {
+                        attrs: [],
+                        mac: Macro {
+                            path: Path {
+                                leading_colon: None,
+                                segments: [
+                                    PathSegment {
+                                        ident: Ident(
+                                            println,
+                                        ),
+                                        arguments: PathArguments::None,
+                                    },
+                                ],
+                            },
+                            bang_token: Not,
+                            delimiter: MacroDelimiter::Paren(
+                                Paren,
+                            ),
+                            tokens: TokenStream [
+                                Literal {
+                                    lit: "{}, {}",
+                                },
+                                Punct {
+                                    char: ',',
+                                    spacing: Alone,
+                                },
+                                Literal {
+                                    lit: "Hello world",
+                                },
+                                Punct {
+                                    char: ',',
+                                    spacing: Alone,
+                                },
+                                Literal {
+                                    lit: "Hello Rust",
+                                },
+                            ],
+                        },
+                        semi_token: Some(
+                            Semi,
+                        ),
+                    },
+                ],
+            },
+        },
+    ],
+}
+
+./examples/number.rs
+File {
+    shebang: None,
+    attrs: [],
+    items: [
+        Item::Fn {
+            attrs: [],
+            vis: Visibility::Inherited,
+            sig: Signature {
+                constness: None,
+                asyncness: None,
+                unsafety: None,
+                abi: None,
+                fn_token: Fn,
+                ident: Ident(
+                    main,
+                ),
+                generics: Generics {
+                    lt_token: None,
+                    params: [],
+                    gt_token: None,
+                    where_clause: None,
+                },
+                paren_token: Paren,
+                inputs: [],
+                variadic: None,
+                output: ReturnType::Default,
+            },
+            block: Block {
+                brace_token: Brace,
+                stmts: [
+                    Stmt::Local {
+                        attrs: [],
+                        let_token: Let,
+                        pat: Pat::Type {
+                            attrs: [],
+                            pat: Pat::Ident {
+                                attrs: [],
+                                by_ref: None,
+                                mutability: None,
+                                ident: Ident(
+                                    x,
+                                ),
+                                subpat: None,
+                            },
+                            colon_token: Colon,
+                            ty: Type::Path {
+                                qself: None,
+                                path: Path {
+                                    leading_colon: None,
+                                    segments: [
+                                        PathSegment {
+                                            ident: Ident(
+                                                i8,
+                                            ),
+                                            arguments: PathArguments::None,
+                                        },
+                                    ],
+                                },
+                            },
+                        },
+                        init: None,
+                        semi_token: Semi,
+                    },
+                    Stmt::Expr(
+                        Expr::Assign {
+                            attrs: [],
+                            left: Expr::Path {
+                                attrs: [],
+                                qself: None,
+                                path: Path {
+                                    leading_colon: None,
+                                    segments: [
+                                        PathSegment {
+                                            ident: Ident(
+                                                x,
+                                            ),
+                                            arguments: PathArguments::None,
+                                        },
+                                    ],
+                                },
+                            },
+                            eq_token: Eq,
+                            right: Expr::Lit {
+                                attrs: [],
+                                lit: Lit::Int {
+                                    token: 5,
+                                },
+                            },
+                        },
+                        Some(
+                            Semi,
+                        ),
+                    ),
+                ],
+            },
+        },
+    ],
+}

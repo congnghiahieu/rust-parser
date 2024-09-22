@@ -2,49 +2,52 @@ mod ast;
 mod cli;
 mod utils;
 
-use std::fs::{self, File};
+use std::fs;
 use std::io::{self, Read};
-use std::path::{self, Path};
-use syn::parse_file;
-use tree_sitter::{Node, Parser};
-use tree_sitter_rust;
+use std::path;
+use std::str::FromStr;
+use syn;
 
-fn main() -> std::io::Result<()> {
-    let mut parser = get_parser();
-    let dir_path = Path::new("./examples");
+fn main() -> io::Result<()> {
+    let in_dir = "examples";
+    let out_dir = "out";
 
-    let mut entries = fs::read_dir(dir_path)?
-        .map(|res| res.map(|e| e.path()))
-        .collect::<Result<Vec<_>, io::Error>>()?;
-    entries.sort();
-
-    entries.iter().for_each(|entry| {
-        if entry.is_file() {
-            let mut source_file = File::open(entry).unwrap();
-            let mut source_code = String::new();
-            source_file.read_to_string(&mut source_code);
-
-            let ast = syn::parse_file(&source_code).unwrap();
-            println!("{}", entry.display());
-            println!("{:#?}", ast);
-
-            // if let Some(tree) = parser.parse(source_code, None) {
-            //     let root_node = tree.root_node();
-
-            //     println!("{}", entry.display());
-            //     utils::walk_tree(root_node, 0, &utils::print_node);
-            //     println!();
-            // };
-        }
-    });
+    traverse_folder(in_dir)?;
 
     Ok(())
 }
 
-fn get_parser() -> Parser {
-    let mut parser = Parser::new();
-    parser
-        .set_language(&tree_sitter_rust::language())
-        .expect("Error loading Rust grammar");
-    parser
+fn parse_file(infile_path: &str) {
+    let mut infile = fs::File::open(infile_path).unwrap();
+    let mut infile_code = String::new();
+    infile.read_to_string(&mut infile_code);
+
+    let ast = syn::parse_file(&infile_code).unwrap();
+
+    let infile_path = path::Path::new(infile_path);
+    let outfolder_path = String::from_str(infile_path.parent().unwrap().to_str().unwrap())
+        .unwrap()
+        .replace("examples", "out");
+    let outfile_filename = format!("{}.txt", infile_path.file_stem().unwrap().to_str().unwrap());
+    let outfile_filepath = path::Path::new(&outfolder_path).join(outfile_filename);
+    let out_str = format!("{:#?}", ast);
+
+    fs::create_dir_all(outfolder_path);
+    fs::write(outfile_filepath, out_str).unwrap();
+}
+
+fn traverse_folder(folder_path: &str) -> io::Result<()> {
+    let entries = fs::read_dir(folder_path)?
+        .map(|res| res.map(|e| e.path()))
+        .collect::<Result<Vec<_>, io::Error>>()?;
+
+    entries.iter().for_each(|entry| {
+        if entry.is_dir() {
+            traverse_folder(entry.to_str().unwrap());
+        } else {
+            parse_file(entry.to_str().unwrap());
+        }
+    });
+
+    Ok(())
 }

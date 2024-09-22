@@ -5,7 +5,3 @@ struct Point {
     x: i32,
     y: i32,
 }
-
-pub fn ast() {
-    println!("Hello, ast!");
-}

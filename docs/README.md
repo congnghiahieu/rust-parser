@@ -1,8 +1,3 @@
-NOTE:
-
-- Chưa hiểu và chưa liệt kê example cho phần lifetime
-- Đọc lại phần lifetime sau
-
 # Overrall view
 
 ## Project view

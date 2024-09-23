@@ -2,6 +2,7 @@ mod ast;
 mod cli;
 mod utils;
 
+use crate::cli::get_args;
 use std::fs;
 use std::io::{self, Read};
 use std::path;
@@ -10,10 +11,8 @@ use syn;
 use syn_serde::json;
 
 fn main() -> io::Result<()> {
-    let in_dir = "examples";
-    let out_dir = "out";
-
-    traverse_folder(in_dir)?;
+    let args = get_args();
+    traverse_folder(&args.input)?;
 
     Ok(())
 }

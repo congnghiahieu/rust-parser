@@ -21,6 +21,16 @@ struct Point {
     y: f32,
 }
 
+impl Point {
+    fn introduce(&self) {
+        println!("I'm a point at ({}, {})", self.x, self.y);
+    }
+
+    fn goodbye(&self, name: &str) {
+        println!("Good bye Point ({}, {}) - {}", self.x, self.y, name);
+    }
+}
+
 // Structs can be reused as fields of another struct
 struct Rectangle {
     // A rectangle can be specified by where the top left and bottom right

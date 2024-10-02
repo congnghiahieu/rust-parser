@@ -1,0 +1,220 @@
+# Syn AST
+
+- https://docs.rs/syn/latest/syn/index.html#structs
+- https://docs.rs/syn/latest/syn/index.html#enums
+
+# Joern CPG
+
+- https://cpg.joern.io
+
+# Syn AST -> Joern CPG
+
+## Auto gen
+
+- `FILE` created by `FILENAME` field
+- `SOURCE_FILE` created by `FILENAME` field
+- `NAMESPACE` created by `NAMESPACE_BLOCK` node
+
+## Manual gen
+
+- ... -> `CODE`, `FULL_NAME`, `INDEX`, `IS_EXTERNAL`, `NAME`
+- ... -> `META_DATA`, `LANGUAGE`, `ROOT`, `OVERLAYS`
+- ... -> `FILENAME` field
+- ... -> `METHOD_REF`, `TYPE_REF`
+
+## Struct
+
+- `Abi`: The binary interface of a function: extern "C" ->
+- `AngleBracketedGenericArguments`: Angle bracketed arguments of a path segment: the <K, V> in HashMap<K, V> ->
+- `Arm`: One arm of a match expression: 0..=10 => { return true; } -> `CONTROL_STRUCTURE`
+- `AssocConst`: An equality constraint on an associated constant: the PANIC = false in Trait<PANIC = false> ->
+- `AssocType`: A binding (equality constraint) on an associated type: the Item = u8 in Iterator<Item = u8> ->
+- `Attribute`: An attribute, like #[repr(transparent)] ->
+- `BareFnArg`: An argument in a function type: the usize in fn(usize) -> bool -> `METHOD_PARAMETER_IN`
+- `BareVariadic`: The variadic argument of a function pointer like fn(usize, ...) -> `IS_VARIADIC`
+- `Block`: A braced block containing Rust statements -> `BLOCK`
+- `BoundLifetimes`: A set of bound lifetimes: for<'a, 'b, 'c> ->
+- `ConstParam`: A const generic parameter: const LENGTH: usize ->
+- `Constraint`: An associated type bound: Iterator<Item: Display> ->
+- `DataEnumderive`: An enum input to a proc\*macro_derive macro ->
+- `DataStructderive`: A struct input to a proc_macro_derive macro ->
+- `DataUnionderive`: An untagged union input to a proc_macro_derive macro ->
+- `DeriveInputderive`: Data structure sent to a proc_macro_derive macro ->
+- `Error`: Error returned when a Syn parser cannot parse the input tokens ->
+- `ExprArray`: A slice literal expression: [a, b, c, d] ->
+- `ExprAssign`: An assignment expression: a = compute() ->
+- `ExprAsync`: An async block: async \{ ... \} ->
+- `ExprAwait`: An await expression: fut.await ->
+- `ExprBinary`: A binary operation: a + b, a += b ->
+- `ExprBlock`: A blocked scope: \{ ... \} -> `BLOCK`
+- `ExprBreak`: A break, with an optional label to break and an optional expression -> `CONTROL_STRUCTURE`
+- `ExprCall`: A function call expression: invoke(a, b) -> `CALL`
+- `ExprCast`: A cast expression: foo as f64 ->
+- `ExprClosure`: A closure expression: |a, b| a + b -> `METHOD`
+- `ExprConst`: A const block: const \{ ... \} ->
+- `ExprContinue`: A continue, with an optional label -> `CONTROL_STRUCTURE`
+- `ExprField`: Access of a named struct field (obj.k) or unnamed tuple struct field (obj.0) -> `FIELD_IDENTIFIER`
+- `ExprForLoop`: A for loop: for pat in expr \{ ... \} -> `CONTROL_STRUCTURE`
+- `ExprGroup`: An expression contained within invisible delimiters ->
+- `ExprIf`: An if expression with an optional else block: if expr \{ ... \} else \{ ... \} -> `CONTROL_STRUCTURE`
+- `ExprIndex`: A square bracketed indexing expression: vector[2] -> `INDEX`
+- `ExprInfer`: The inferred value of a const generic argument, denoted \* ->
+- `ExprLet`: A let guard: let Some(x) = opt -> `LOCAL`
+- `ExprLit`: A literal in place of an expression: 1, "foo" -> `LITERAL`
+- `ExprLoop`: Conditionless loop: loop \{ ... \} -> `CONTROL_STRUCTURE`
+- `ExprMacro`: A macro invocation expression: format!("{}", q) -> `CALL`
+- `ExprMatch`: A match expression: match n { Some(n) => {}, None => {} } -> `CONTROL_STRUCTURE`
+- `ExprMethodCall`: A method call expression: x.foo::<T>(a, b) -> `CALL`
+- `ExprParen`: A parenthesized expression: (a + b) ->
+- `ExprPath`: A path like std::mem::replace possibly containing generic parameters and a qualified self-type -> `IDENTIFIER`
+- `ExprRange`: A range expression: 1..2, 1.., ..2, 1..=2, ..=2 -> `TYPE`
+- `ExprReference`: A referencing operation: &a or &mut a -> `IDENTIFIER`
+- `ExprRepeat`: An array literal constructed from one repeated element: [0u8; N] -> `TYPE`
+- `ExprReturn`: A return, with an optional value to be returned -> `RETURN`
+- `ExprStruct`: A struct literal expression: Point { x: 1, y: 1 } -> `TYPE`
+- `ExprTry`: A try-expression: expr? ->
+- `ExprTryBlock`: A try block: try \{ ... \} ->
+- `ExprTuple`: A tuple expression: (a, b, c, d) -> `TYPE`
+- `ExprUnary`: A unary operation: !x, \*x ->
+- `ExprUnsafe`: An unsafe block: unsafe \{ ... \} ->
+- `ExprWhile`: A while loop: while expr \{ ... \} -> `CONTROL_STRUCTURE`
+- `ExprYield`: A yield expression: yield expr -> `RETURN`
+- `Field`: A field of a struct or enum variant -> `MEMBER`
+- `FieldPat`: A single field in a struct pattern ->
+- `FieldValue`: A field-value pair in a struct literal ->
+- `FieldsNamed`: Named fields of a struct or struct variant such as Point { x: f64, y: f64 } -> `MEMBER`
+- `FieldsUnnamed`: Unnamed fields of a tuple struct or tuple variant such as Some(T) -> `MEMBER`
+- `File`: A complete file of Rust source code ->
+- `ForeignItemFn`: A foreign function in an extern block -> `METHOD`
+- `ForeignItemMacro`: A macro invocation within an extern block -> `CALL`
+- `ForeignItemStatic`: A foreign static item in an extern block: static ext: u8 -> `TYPE_DECL`
+- `ForeignItemType`: A foreign type in an extern block: type void -> `TYPE_DECL`
+- `Generics`: Lifetimes and type parameters attached to a declaration of a function, enum, trait, etc ->
+- `Ident`: A word of Rust code, which may be a keyword or legal variable name -> `IDENTIFIER`
+- `ImplGenerics`:() and printing Returned by Generics::split*for*impl ->
+- `ImplItemConst`: An associated constant within an impl block -> `MEMBER`
+- `ImplItemFn`: An associated function within an impl block -> `METHOD`, `MEMBER`
+- `ImplItemMacro`: A macro invocation within an impl block -> `CALL`, `MEMBER`
+- `ImplItemType`: An associated type within an impl block -> `MEMBER`
+- `Index`: The index of an unnamed tuple struct field -> `INDEX`
+- `ItemConst`: A constant item: const MAX: u16 = 65535 ->`TYPE_DECL`
+- `ItemEnum`: An enum definition: enum Foo<A, B> { A(A), B(B) } -> `TYPE_DECL`
+- `ItemExternCrate`: An extern crate item: extern crate serde -> `TYPE_DECL`
+- `ItemFn`: A free-standing function: fn process(n: usize) -> Result<()> \{ ... \} -> `METHOD`
+- `ItemForeignMod`: A block of foreign items: extern "C" \{ ... \} -> `TYPE_DECL`
+- `ItemImpl`: An impl block providing trait or associated items: impl\<A\> Trait for Data\<A\> \{ ... \} -> `TYPE_DECL`
+- `ItemMacro`: A macro invocation, which includes macro_rules! definitions -> `TYPE_DECL`
+- `ItemMod`: A module or module declaration: mod m or mod m \{ ... \} -> `TYPE_DECL`
+- `ItemStatic`: A static item: static BIKE: Shed = Shed(42) -> `TYPE_DECL`
+- `ItemStruct`: A struct definition: struct Foo\<A\> \{ x: A \} -> `TYPE_DECL`
+- `ItemTrait`: A trait definition: pub trait Iterator \{ ... \} -> `TYPE_DECL`
+- `ItemTraitAlias`: A trait alias: pub trait SharableIterator = Iterator + Sync -> `TYPE_DECL`
+- `ItemType`: A type alias: type Result<T> = std::result::Result<T, MyError> -> `TYPE_DECL`
+- `ItemUnion`: A union definition: union Foo<A, B> { x: A, y: B } -> `TYPE_DECL`
+- `ItemUse`: A use declaration: use std::collections::HashMap -> `NAMESPACE_BLOCK`, `TYPE_DECL`
+- `Label`: A lifetime labeling a for, while, or loop -> `JUMP_LABEL`
+- `Lifetime`: A Rust lifetime: 'a -> `TYPE_PARAMETER`
+- `LifetimeParam`: A lifetime definition: 'a: 'b + 'c + 'd -> `TYPE_DECL`
+- `LitBool`: A boolean literal: true or false -> `LITERAL`
+- `LitByte`: A byte literal: b'f' -> `LITERAL`
+- `LitByteStr`: A byte string literal: b"foo" -> `LITERAL`
+- `LitCStr`: A nul-terminated C-string literal: c"foo" -> `LITERAL`
+- `LitChar`: A character literal: 'a' -> `LITERAL`
+- `LitFloat`: A floating point literal: 1f64 or 1.0e10f64 -> `LITERAL`
+- `LitInt`: An integer literal: 1 or 1u16 -> `LITERAL`
+- `LitStr`: A UTF-8 string literal: "foo" -> `LITERAL`
+- `Local`: A local let binding: let x: u64 = s.parse()? -> `LOCAL`
+- `LocalInit`: The expression assigned in a local let binding, including optional diverging else block -> `LOCAL`, `CONTROL_STRUCTURE`
+- `Macro`: A macro invocation: println!("{}", mac) -> `CALL`
+- `MetaList`: A structured list within an attribute, like derive(Copy, Clone) ->
+- `MetaNameValue`: A name-value pair within an attribute, like feature = "nightly" ->
+- `ParenthesizedGenericArguments`: Arguments of a function path segment: the (A, B) -> C in Fn(A,B) -> C ->
+- `PatConst`: A const block: const \{ ... \} ->
+- `PatIdent`: A pattern that binds a new variable: ref mut binding @ SUBPATTERN ->
+- `PatLit`: A literal in place of an expression: 1, "foo" ->
+- `PatMacro`: A macro invocation expression: format!("{}", q) -> `CALL`
+- `PatOr`: A pattern that matches any one of a set of cases ->
+- `PatParen`: A parenthesized pattern: (A | B) ->
+- `PatPath`: A path like std::mem::replace possibly containing generic parameters and a qualified self-type ->
+- `PatRange`: A range expression: 1..2, 1.., ..2, 1..=2, ..=2 ->
+- `PatReference`: A reference pattern: &mut var ->
+- `PatRest`: The dots in a tuple or slice pattern: [0, 1, ..] ->
+- `PatSlice`: A dynamically sized slice pattern: [a, b, ref i @ .., y, z] ->
+- `PatStruct`: A struct or struct variant pattern: Variant { x, y, .. } ->
+- `PatTuple`: A tuple pattern: (a, b) ->
+- `PatTupleStruct`: A tuple struct or tuple variant pattern: Variant(x, y, .., z) ->
+- `PatType`: A type ascription pattern: foo: f64 -> `METHOD_PARAMETER_IN`
+- `PatWild`: A pattern that matches any value: \* ->
+- `Path`: A path at which a named item is exported (e.g. std::collections::HashMap) -> `IDENTIFIER`,
+- `PathSegment`: A segment of a path together with any path arguments on that segment -> `NAMESPACE_BLOCK`, `IDENTIFIER`
+- `PredicateLifetime`: A lifetime predicate in a where clause: 'a: 'b + 'c -> `TYPE_DECL`
+- `PredicateType`: A type predicate in a where clause: for<'c> Foo<'c>: Trait<'c> -> `TYPE_DECL`
+- `QSelf`: The explicit Self type in a qualified path: the T in <T as Display>::fmt ->
+- `Receiver`: The self argument of an associated method (`self`, `&self`, `&mut self`) -> `METHOD_PARAMETER_IN`
+- `Signature`: A function signature in a trait or implementation: unsafe fn initialize(&self) -> `SIGNATURE`
+- `StmtMacro`: A macro invocation in statement position -> `CALL`
+- `TraitBound`: A trait used as a bound on a type parameter ->
+- `TraitItemConst`: An associated constant within the definition of a trait -> `TYPE_DECL`
+- `TraitItemFn`: An associated function within the definition of a trait -> `METHOD`, `TYPE_DECL`
+- `TraitItemMacro`: A macro invocation within the definition of a trait -> `CALL`
+- `TraitItemType`: An associated type within the definition of a trait -> `TYPE_DECL`
+- `Turbofish`:() and printing Returned by TypeGenerics::as\*turbofish ->
+- `TypeArray`: A fixed size array type: [T; n] ->
+- `TypeBareFn`: A bare function type: fn(usize) -> bool ->
+- `TypeGenerics`:() and printing Returned by Generics::split_for_impl ->
+- `TypeGroup`: A type contained within invisible delimiters ->
+- `TypeImplTrait`: An impl Bound1 + Bound2 + Bound3 type where Bound is a trait or a lifetime ->
+- `TypeInfer`: Indication that a type should be inferred by the compiler: \* ->
+- `TypeMacro`: A macro in the type position ->
+- `TypeNever`: The never type: ! ->
+- `TypeParam`: A generic type parameter: T: Into<String> ->
+- `TypeParen`: A parenthesized type equivalent to the inner type ->
+- `TypePath`: A path like std::slice::Iter, optionally qualified with a self-type as in <Vec<T> as SomeTrait>::Associated ->
+- `TypePtr`: A raw pointer type: \_const T or \_mut T ->
+- `TypeReference`: A reference type: &'a T or &'a mut T ->
+- `TypeSlice`: A dynamically sized slice type: [T] ->
+- `TypeTraitObject`: A trait object type dyn Bound1 + Bound2 + Bound3 where Bound is a trait or a lifetime ->
+- `TypeTuple`: A tuple type: (A, B, C, String) ->
+- `UseGlob`: A glob import in a use item: \_ ->
+- `UseGroup`: A braced group of imports in a use item: {A, B, C} ->
+- `UseName`: An identifier imported by a use item: HashMap ->
+- `UsePath`: A path prefix of imports in a use item: std::... ->
+- `UseRename`: An renamed identifier imported by a use item: HashMap as Map ->
+- `Variadic`: The variadic argument of a foreign function -> `IS_VARIADIC`
+- `Variant`: An enum variant -> `MEMBER`
+- `VisRestricted`: A visibility level restricted to some path: pub(self) or pub(super) or pub(crate) or pub(in some::module) -> `MODIFIER`
+- `WhereClause`: A where clause in a definition: where T: Deserialize<'de>, D: 'static ->
+
+## Enum
+
+- `AttrStyle`: Distinguishes between attributes that decorate an item and attributes that are contained within an item ->
+- `BinOp`: A binary operator: +, +=, & ->
+- `Dataderive`: The storage of a struct, enum or union data structure ->
+- `Expr`: A Rust expression -> `EXPRESSION`
+- `FieldMutability`: Unused, but reserved for RFC 3323 restrictions ->
+- `Fields`: Data stored within an enum variant or struct ->
+- `FnArg`: An argument in a function signature: the n: usize in fn f(n: usize) -> `METHOD_PARAMETER_IN`
+- `ForeignItem`: An item within an extern block -> `TYPE_DECL`
+- `GenericArgument`: An individual generic argument, like 'a, T, or Item = T -> `TYPE_ARGUMENT`
+- `GenericParam`: A generic type parameter, lifetime, or const generic: T: Into<String>, 'a: 'b, const LEN: usize -> `TYPE_PARAMETER`
+- `ImplItem`: An item within an impl block -> `MEMBER`
+- `ImplRestriction`: Unused, but reserved for RFC 3323 restrictions ->
+- `Item`: Things that can appear directly inside of a module or scope -> `TYPE_DECL`
+- `Lit`: A Rust literal such as a string or integer or boolean -> `LITERAL`
+- `MacroDelimiter`: A grouping token that surrounds a macro body: m!(...) or m!{...} or m![...] ->
+- `Member`: A struct or tuple struct field accessed in a struct literal or field expression -> `MEMBER`
+- `Meta`: Content of a compile-time structured attribute ->
+- `Pat`: A pattern in a local binding, function signature, match expression, or various other places ->
+- `PathArguments`: Angle bracketed or parenthesized arguments of a path segment ->
+- `RangeLimits`: Limit types of a range, inclusive or exclusive -> `EXPRESSION`
+- `ReturnType`: Return type of a function signature -> `METHOD_RETURN`
+- `StaticMutability`: The mutability of an Item::Static or ForeignItem::Static ->
+- `Stmt`: A statement, usually ending in a semicolon ->
+- `TraitBoundModifier`: A modifier on a trait bound, currently only used for the ? in ?Sized ->
+- `TraitItem`: An item declaration within the definition of a trait -> `TYPE_DECL`
+- `Type`: The possible types that a Rust value could have ->
+- `TypeParamBound`: A trait or lifetime used as a bound on a type parameter ->
+- `UnOp`: A unary operator: \_, !, - ->
+- `UseTree`: A suffix of an import tree in a use item: Type as Renamed or \_ ->
+- `Visibility`: The visibility level of an item: inherited or pub or pub(restricted) -> `MODIFIER`
+- `WherePredicate`: A single predicate in a where clause: T: Deserialize<'de> ->

@@ -1,0 +1,42 @@
+[submodule "axum"]
+	path = tests/projects/axum
+	url = https://github.com/tokio-rs/axum.git
+[submodule "actix-web"]
+	path = tests/projects/actix-web
+	url = https://github.com/actix/actix-web.git
+[submodule "yew"]
+	path = tests/projects/yew
+	url = https://github.com/yewstack/yew.git
+[submodule "sea-query"]
+	path = tests/projects/sea-query
+	url = https://github.com/SeaQL/sea-query.git
+[submodule "tokio"]
+	path = tests/projects/tokio
+	url = https://github.com/tokio-rs/tokio.git
+[submodule "sea-orm"]
+	path = tests/projects/sea-orm
+	url = https://github.com/SeaQL/sea-orm.git
+[submodule "Rocket"]
+	path = tests/projects/Rocket
+	url = https://github.com/rwf2/Rocket.git
+[submodule "json"]
+	path = tests/projects/json
+	url = https://github.com/serde-rs/json.git
+[submodule "serde"]
+	path = tests/projects/serde
+	url = https://github.com/serde-rs/serde.git
+[submodule "diesel"]
+	path = tests/projects/diesel
+	url = https://github.com/diesel-rs/diesel.git
+[submodule "dioxus"]
+	path = tests/projects/dioxus
+	url = https://github.com/DioxusLabs/dioxus.git
+[submodule "ratatui"]
+	path = tests/projects/ratatui
+	url = https://github.com/ratatui/ratatui.git
+[submodule "tauri"]
+	path = tests/projects/tauri
+	url = https://github.com/tauri-apps/tauri.git
+[submodule "bevy"]
+	path = tests/projects/bevy
+	url = https://github.com/bevyengine/bevy.git

@@ -7,4 +7,9 @@ EXAMPLES_DIR="$ROOT_DIR/tests/examples"
 OUT_DIR="$ROOT_DIR/output"
 NUMBER_OF_TEST_PROJECTS=$(ls $TEST_PROJECTS_DIR | wc -l)
 
-cargo run --release -- --input "$EXAMPLES_DIR" --output "$OUT_DIR/examples" $@
+cargo run --release -- --input "$TEST_PROJECTS_DIR/sea-orm" --output "$OUT_DIR/examples" --stdout --text --json --cargo-toml
+
+if [ $? -ne 0 ]; then
+  echo "Failed to run the parser for $folder"
+  exit 1
+fi

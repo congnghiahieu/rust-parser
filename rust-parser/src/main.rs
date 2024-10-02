@@ -7,5 +7,4 @@ use crate::parse::{parse_by_syn, parse_by_treesitter};
 fn main() {
     let args = get_args();
     parse_by_syn(&args);
-    // parse_by_treesitter();
 }

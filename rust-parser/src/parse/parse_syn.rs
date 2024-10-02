@@ -11,7 +11,15 @@ pub fn parse_by_syn(args: &Args) {
             println!("{:#?}", abs_filepath);
         }
 
-        let ast = parse_ast(abs_filepath);
+        let parse_result = parse_ast(abs_filepath);
+        if parse_result.is_err() {
+            if args.write_stderr {
+                eprintln!("{:#?}", parse_result.unwrap_err());
+            }
+            return;
+        }
+
+        let ast = parse_result.unwrap();
 
         if args.write_text {
             let out_text = format!("{:#?}", ast);
@@ -37,12 +45,22 @@ pub fn parse_by_syn(args: &Args) {
     };
 
     let toml_callback = |abs_filepath: &str| {
-        let manifest = parse_cargo_toml(abs_filepath);
+        if args.write_stdout {
+            println!("{:#?}", abs_filepath);
+        }
+
+        let parse_result = parse_cargo_toml(abs_filepath);
+        if parse_result.is_err() {
+            if args.write_stderr {
+                eprintln!("{:#?}", parse_result.unwrap_err());
+            }
+            return;
+        }
+
+        let manifest = parse_result.unwrap();
 
         if args.write_cargo_toml {
-            let Ok(out_json) = serde_json::to_string_pretty(&manifest) else {
-                panic!("Error serializing manifest of Cargo.toml");
-            };
+            let out_json = serde_json::to_string_pretty(&manifest).unwrap();
             write_output_format(
                 &out_json,
                 abs_filepath,
@@ -67,16 +85,11 @@ fn traverse_folder(
     toml_callback: &impl Fn(&str) -> (),
     parse_src_only: bool,
 ) {
-    let Ok(dir) = fs::read_dir(folder_path) else {
-        panic!("Error reading folder: {:#?}", folder_path);
-    };
-
-    let Ok(entries) = dir
+    let dir = fs::read_dir(folder_path).unwrap();
+    let entries = dir
         .map(|res| res.map(|e| e.path()))
         .collect::<Result<Vec<_>, io::Error>>()
-    else {
-        panic!("Error reading folder entries: {:#?}", folder_path);
-    };
+        .unwrap();
 
     entries.iter().for_each(|entry| {
         if entry.is_dir() {
@@ -118,23 +131,30 @@ fn traverse_folder(
     });
 }
 
-fn parse_ast(filepath: &str) -> syn::File {
+fn parse_ast(filepath: &str) -> Result<syn::File, String> {
     let Ok(code) = fs::read_to_string(filepath) else {
-        panic!("Error reading file: {:#?}", filepath);
+        return Err(format!("Error reading file: {:#?}", filepath));
     };
 
-    syn::parse_file(&code).unwrap()
+    let Ok(ast) = syn::parse_file(&code) else {
+        return Err(format!("Error parsing file: {:#?}", filepath));
+    };
+
+    Ok(ast)
 }
 
-pub fn parse_cargo_toml(cargo_toml_path: &str) -> Manifest {
+pub fn parse_cargo_toml(cargo_toml_path: &str) -> Result<Manifest, String> {
     let Ok(mut manifest) = Manifest::from_path(cargo_toml_path) else {
-        panic!("Error reading Cargo.toml");
+        return Err(format!(
+            "Error reading Cargo.toml at {:#?}",
+            cargo_toml_path
+        ));
     };
 
     manifest
         .complete_from_path(Path::new(cargo_toml_path))
         .unwrap();
-    manifest
+    Ok(manifest)
 }
 
 enum Format {

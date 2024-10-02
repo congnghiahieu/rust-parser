@@ -1,0 +1,527 @@
+warning: unused import: `parse_by_treesitter`
+ --> rust-parser/src/main.rs:5:34
+  |
+5 | use crate::parse::{parse_by_syn, parse_by_treesitter};
+  |                                  ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: function `get_parser` is never used
+ --> rust-parser/src/parse/parse_treesitter.rs:6:4
+  |
+6 | fn get_parser() -> Parser {
+  |    ^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `parse_by_treesitter` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:12:8
+   |
+12 | pub fn parse_by_treesitter() {
+   |        ^^^^^^^^^^^^^^^^^^^
+
+warning: function `walk_tree` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:50:4
+   |
+50 | fn walk_tree(node: Node, level: usize, callback: &impl Fn(Node, usize) -> ()) {
+   |    ^^^^^^^^^
+
+warning: function `print_node` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:64:4
+   |
+64 | fn print_node(node: Node, level: usize) {
+   |    ^^^^^^^^^^
+
+warning: `rust-parser` (bin "rust-parser") generated 5 warnings (run `cargo fix --bin "rust-parser"` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 0.04s
+     Running `/home/hieucien/Workspace/ast/rust-parser/target/release/rust-parser --input /home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/Rocket --output /home/hieucien/Workspace/ast/rust-parser/rust-parser/output/Rocket --stderr --text --json --cargo-toml`
+warning: unused import: `parse_by_treesitter`
+ --> rust-parser/src/main.rs:5:34
+  |
+5 | use crate::parse::{parse_by_syn, parse_by_treesitter};
+  |                                  ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: function `get_parser` is never used
+ --> rust-parser/src/parse/parse_treesitter.rs:6:4
+  |
+6 | fn get_parser() -> Parser {
+  |    ^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `parse_by_treesitter` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:12:8
+   |
+12 | pub fn parse_by_treesitter() {
+   |        ^^^^^^^^^^^^^^^^^^^
+
+warning: function `walk_tree` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:50:4
+   |
+50 | fn walk_tree(node: Node, level: usize, callback: &impl Fn(Node, usize) -> ()) {
+   |    ^^^^^^^^^
+
+warning: function `print_node` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:64:4
+   |
+64 | fn print_node(node: Node, level: usize) {
+   |    ^^^^^^^^^^
+
+warning: `rust-parser` (bin "rust-parser") generated 5 warnings (run `cargo fix --bin "rust-parser"` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 0.03s
+     Running `/home/hieucien/Workspace/ast/rust-parser/target/release/rust-parser --input /home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/actix-web --output /home/hieucien/Workspace/ast/rust-parser/rust-parser/output/actix-web --stderr --text --json --cargo-toml`
+warning: unused import: `parse_by_treesitter`
+ --> rust-parser/src/main.rs:5:34
+  |
+5 | use crate::parse::{parse_by_syn, parse_by_treesitter};
+  |                                  ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: function `get_parser` is never used
+ --> rust-parser/src/parse/parse_treesitter.rs:6:4
+  |
+6 | fn get_parser() -> Parser {
+  |    ^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `parse_by_treesitter` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:12:8
+   |
+12 | pub fn parse_by_treesitter() {
+   |        ^^^^^^^^^^^^^^^^^^^
+
+warning: function `walk_tree` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:50:4
+   |
+50 | fn walk_tree(node: Node, level: usize, callback: &impl Fn(Node, usize) -> ()) {
+   |    ^^^^^^^^^
+
+warning: function `print_node` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:64:4
+   |
+64 | fn print_node(node: Node, level: usize) {
+   |    ^^^^^^^^^^
+
+warning: `rust-parser` (bin "rust-parser") generated 5 warnings (run `cargo fix --bin "rust-parser"` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 0.04s
+     Running `/home/hieucien/Workspace/ast/rust-parser/target/release/rust-parser --input /home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/axum --output /home/hieucien/Workspace/ast/rust-parser/rust-parser/output/axum --stderr --text --json --cargo-toml`
+warning: unused import: `parse_by_treesitter`
+ --> rust-parser/src/main.rs:5:34
+  |
+5 | use crate::parse::{parse_by_syn, parse_by_treesitter};
+  |                                  ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: function `get_parser` is never used
+ --> rust-parser/src/parse/parse_treesitter.rs:6:4
+  |
+6 | fn get_parser() -> Parser {
+  |    ^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `parse_by_treesitter` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:12:8
+   |
+12 | pub fn parse_by_treesitter() {
+   |        ^^^^^^^^^^^^^^^^^^^
+
+warning: function `walk_tree` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:50:4
+   |
+50 | fn walk_tree(node: Node, level: usize, callback: &impl Fn(Node, usize) -> ()) {
+   |    ^^^^^^^^^
+
+warning: function `print_node` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:64:4
+   |
+64 | fn print_node(node: Node, level: usize) {
+   |    ^^^^^^^^^^
+
+warning: `rust-parser` (bin "rust-parser") generated 5 warnings (run `cargo fix --bin "rust-parser"` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 0.03s
+     Running `/home/hieucien/Workspace/ast/rust-parser/target/release/rust-parser --input /home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/bevy --output /home/hieucien/Workspace/ast/rust-parser/rust-parser/output/bevy --stderr --text --json --cargo-toml`
+warning: unused import: `parse_by_treesitter`
+ --> rust-parser/src/main.rs:5:34
+  |
+5 | use crate::parse::{parse_by_syn, parse_by_treesitter};
+  |                                  ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: function `get_parser` is never used
+ --> rust-parser/src/parse/parse_treesitter.rs:6:4
+  |
+6 | fn get_parser() -> Parser {
+  |    ^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `parse_by_treesitter` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:12:8
+   |
+12 | pub fn parse_by_treesitter() {
+   |        ^^^^^^^^^^^^^^^^^^^
+
+warning: function `walk_tree` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:50:4
+   |
+50 | fn walk_tree(node: Node, level: usize, callback: &impl Fn(Node, usize) -> ()) {
+   |    ^^^^^^^^^
+
+warning: function `print_node` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:64:4
+   |
+64 | fn print_node(node: Node, level: usize) {
+   |    ^^^^^^^^^^
+
+warning: `rust-parser` (bin "rust-parser") generated 5 warnings (run `cargo fix --bin "rust-parser"` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 0.04s
+     Running `/home/hieucien/Workspace/ast/rust-parser/target/release/rust-parser --input /home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/diesel --output /home/hieucien/Workspace/ast/rust-parser/rust-parser/output/diesel --stderr --text --json --cargo-toml`
+warning: unused import: `parse_by_treesitter`
+ --> rust-parser/src/main.rs:5:34
+  |
+5 | use crate::parse::{parse_by_syn, parse_by_treesitter};
+  |                                  ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: function `get_parser` is never used
+ --> rust-parser/src/parse/parse_treesitter.rs:6:4
+  |
+6 | fn get_parser() -> Parser {
+  |    ^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `parse_by_treesitter` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:12:8
+   |
+12 | pub fn parse_by_treesitter() {
+   |        ^^^^^^^^^^^^^^^^^^^
+
+warning: function `walk_tree` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:50:4
+   |
+50 | fn walk_tree(node: Node, level: usize, callback: &impl Fn(Node, usize) -> ()) {
+   |    ^^^^^^^^^
+
+warning: function `print_node` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:64:4
+   |
+64 | fn print_node(node: Node, level: usize) {
+   |    ^^^^^^^^^^
+
+warning: `rust-parser` (bin "rust-parser") generated 5 warnings (run `cargo fix --bin "rust-parser"` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 0.03s
+     Running `/home/hieucien/Workspace/ast/rust-parser/target/release/rust-parser --input /home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/dioxus --output /home/hieucien/Workspace/ast/rust-parser/rust-parser/output/dioxus --stderr --text --json --cargo-toml`
+warning: unused import: `parse_by_treesitter`
+ --> rust-parser/src/main.rs:5:34
+  |
+5 | use crate::parse::{parse_by_syn, parse_by_treesitter};
+  |                                  ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: function `get_parser` is never used
+ --> rust-parser/src/parse/parse_treesitter.rs:6:4
+  |
+6 | fn get_parser() -> Parser {
+  |    ^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `parse_by_treesitter` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:12:8
+   |
+12 | pub fn parse_by_treesitter() {
+   |        ^^^^^^^^^^^^^^^^^^^
+
+warning: function `walk_tree` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:50:4
+   |
+50 | fn walk_tree(node: Node, level: usize, callback: &impl Fn(Node, usize) -> ()) {
+   |    ^^^^^^^^^
+
+warning: function `print_node` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:64:4
+   |
+64 | fn print_node(node: Node, level: usize) {
+   |    ^^^^^^^^^^
+
+warning: `rust-parser` (bin "rust-parser") generated 5 warnings (run `cargo fix --bin "rust-parser"` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 0.05s
+     Running `/home/hieucien/Workspace/ast/rust-parser/target/release/rust-parser --input /home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/json --output /home/hieucien/Workspace/ast/rust-parser/rust-parser/output/json --stderr --text --json --cargo-toml`
+warning: unused import: `parse_by_treesitter`
+ --> rust-parser/src/main.rs:5:34
+  |
+5 | use crate::parse::{parse_by_syn, parse_by_treesitter};
+  |                                  ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: function `get_parser` is never used
+ --> rust-parser/src/parse/parse_treesitter.rs:6:4
+  |
+6 | fn get_parser() -> Parser {
+  |    ^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `parse_by_treesitter` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:12:8
+   |
+12 | pub fn parse_by_treesitter() {
+   |        ^^^^^^^^^^^^^^^^^^^
+
+warning: function `walk_tree` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:50:4
+   |
+50 | fn walk_tree(node: Node, level: usize, callback: &impl Fn(Node, usize) -> ()) {
+   |    ^^^^^^^^^
+
+warning: function `print_node` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:64:4
+   |
+64 | fn print_node(node: Node, level: usize) {
+   |    ^^^^^^^^^^
+
+warning: `rust-parser` (bin "rust-parser") generated 5 warnings (run `cargo fix --bin "rust-parser"` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 0.03s
+     Running `/home/hieucien/Workspace/ast/rust-parser/target/release/rust-parser --input /home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/ratatui --output /home/hieucien/Workspace/ast/rust-parser/rust-parser/output/ratatui --stderr --text --json --cargo-toml`
+warning: unused import: `parse_by_treesitter`
+ --> rust-parser/src/main.rs:5:34
+  |
+5 | use crate::parse::{parse_by_syn, parse_by_treesitter};
+  |                                  ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: function `get_parser` is never used
+ --> rust-parser/src/parse/parse_treesitter.rs:6:4
+  |
+6 | fn get_parser() -> Parser {
+  |    ^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `parse_by_treesitter` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:12:8
+   |
+12 | pub fn parse_by_treesitter() {
+   |        ^^^^^^^^^^^^^^^^^^^
+
+warning: function `walk_tree` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:50:4
+   |
+50 | fn walk_tree(node: Node, level: usize, callback: &impl Fn(Node, usize) -> ()) {
+   |    ^^^^^^^^^
+
+warning: function `print_node` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:64:4
+   |
+64 | fn print_node(node: Node, level: usize) {
+   |    ^^^^^^^^^^
+
+warning: `rust-parser` (bin "rust-parser") generated 5 warnings (run `cargo fix --bin "rust-parser"` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 0.04s
+     Running `/home/hieucien/Workspace/ast/rust-parser/target/release/rust-parser --input /home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/sea-orm --output /home/hieucien/Workspace/ast/rust-parser/rust-parser/output/sea-orm --stderr --text --json --cargo-toml`
+"Error reading Cargo.toml at \"/home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/sea-orm/issues/1790/Cargo.toml\""
+warning: unused import: `parse_by_treesitter`
+ --> rust-parser/src/main.rs:5:34
+  |
+5 | use crate::parse::{parse_by_syn, parse_by_treesitter};
+  |                                  ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: function `get_parser` is never used
+ --> rust-parser/src/parse/parse_treesitter.rs:6:4
+  |
+6 | fn get_parser() -> Parser {
+  |    ^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `parse_by_treesitter` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:12:8
+   |
+12 | pub fn parse_by_treesitter() {
+   |        ^^^^^^^^^^^^^^^^^^^
+
+warning: function `walk_tree` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:50:4
+   |
+50 | fn walk_tree(node: Node, level: usize, callback: &impl Fn(Node, usize) -> ()) {
+   |    ^^^^^^^^^
+
+warning: function `print_node` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:64:4
+   |
+64 | fn print_node(node: Node, level: usize) {
+   |    ^^^^^^^^^^
+
+warning: `rust-parser` (bin "rust-parser") generated 5 warnings (run `cargo fix --bin "rust-parser"` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 0.03s
+     Running `/home/hieucien/Workspace/ast/rust-parser/target/release/rust-parser --input /home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/sea-query --output /home/hieucien/Workspace/ast/rust-parser/rust-parser/output/sea-query --stderr --text --json --cargo-toml`
+warning: unused import: `parse_by_treesitter`
+ --> rust-parser/src/main.rs:5:34
+  |
+5 | use crate::parse::{parse_by_syn, parse_by_treesitter};
+  |                                  ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: function `get_parser` is never used
+ --> rust-parser/src/parse/parse_treesitter.rs:6:4
+  |
+6 | fn get_parser() -> Parser {
+  |    ^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `parse_by_treesitter` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:12:8
+   |
+12 | pub fn parse_by_treesitter() {
+   |        ^^^^^^^^^^^^^^^^^^^
+
+warning: function `walk_tree` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:50:4
+   |
+50 | fn walk_tree(node: Node, level: usize, callback: &impl Fn(Node, usize) -> ()) {
+   |    ^^^^^^^^^
+
+warning: function `print_node` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:64:4
+   |
+64 | fn print_node(node: Node, level: usize) {
+   |    ^^^^^^^^^^
+
+warning: `rust-parser` (bin "rust-parser") generated 5 warnings (run `cargo fix --bin "rust-parser"` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 0.04s
+     Running `/home/hieucien/Workspace/ast/rust-parser/target/release/rust-parser --input /home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/serde --output /home/hieucien/Workspace/ast/rust-parser/rust-parser/output/serde --stderr --text --json --cargo-toml`
+warning: unused import: `parse_by_treesitter`
+ --> rust-parser/src/main.rs:5:34
+  |
+5 | use crate::parse::{parse_by_syn, parse_by_treesitter};
+  |                                  ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: function `get_parser` is never used
+ --> rust-parser/src/parse/parse_treesitter.rs:6:4
+  |
+6 | fn get_parser() -> Parser {
+  |    ^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `parse_by_treesitter` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:12:8
+   |
+12 | pub fn parse_by_treesitter() {
+   |        ^^^^^^^^^^^^^^^^^^^
+
+warning: function `walk_tree` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:50:4
+   |
+50 | fn walk_tree(node: Node, level: usize, callback: &impl Fn(Node, usize) -> ()) {
+   |    ^^^^^^^^^
+
+warning: function `print_node` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:64:4
+   |
+64 | fn print_node(node: Node, level: usize) {
+   |    ^^^^^^^^^^
+
+warning: `rust-parser` (bin "rust-parser") generated 5 warnings (run `cargo fix --bin "rust-parser"` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 0.04s
+     Running `/home/hieucien/Workspace/ast/rust-parser/target/release/rust-parser --input /home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/tauri --output /home/hieucien/Workspace/ast/rust-parser/rust-parser/output/tauri --stderr --text --json --cargo-toml`
+"Error parsing file: \"/home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/tauri/crates/tauri-cli/templates/plugin/src/models.rs\""
+"Error parsing file: \"/home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/tauri/crates/tauri-cli/templates/plugin/src/lib.rs\""
+"Error parsing file: \"/home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/tauri/crates/tauri-cli/templates/plugin/src/error.rs\""
+"Error parsing file: \"/home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/tauri/crates/tauri-cli/templates/plugin/src/commands.rs\""
+"Error parsing file: \"/home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/tauri/crates/tauri-cli/templates/plugin/src/desktop.rs\""
+"Error parsing file: \"/home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/tauri/crates/tauri-cli/templates/plugin/src/mobile.rs\""
+"Error parsing file: \"/home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/tauri/crates/tauri-cli/templates/plugin/__example-api/tauri-app/src-tauri/src/lib.rs\""
+"Error parsing file: \"/home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/tauri/crates/tauri-cli/templates/plugin/__example-basic/vanilla/src-tauri/src/lib.rs\""
+warning: unused import: `parse_by_treesitter`
+ --> rust-parser/src/main.rs:5:34
+  |
+5 | use crate::parse::{parse_by_syn, parse_by_treesitter};
+  |                                  ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: function `get_parser` is never used
+ --> rust-parser/src/parse/parse_treesitter.rs:6:4
+  |
+6 | fn get_parser() -> Parser {
+  |    ^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `parse_by_treesitter` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:12:8
+   |
+12 | pub fn parse_by_treesitter() {
+   |        ^^^^^^^^^^^^^^^^^^^
+
+warning: function `walk_tree` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:50:4
+   |
+50 | fn walk_tree(node: Node, level: usize, callback: &impl Fn(Node, usize) -> ()) {
+   |    ^^^^^^^^^
+
+warning: function `print_node` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:64:4
+   |
+64 | fn print_node(node: Node, level: usize) {
+   |    ^^^^^^^^^^
+
+warning: `rust-parser` (bin "rust-parser") generated 5 warnings (run `cargo fix --bin "rust-parser"` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 0.03s
+     Running `/home/hieucien/Workspace/ast/rust-parser/target/release/rust-parser --input /home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/tokio --output /home/hieucien/Workspace/ast/rust-parser/rust-parser/output/tokio --stderr --text --json --cargo-toml`
+warning: unused import: `parse_by_treesitter`
+ --> rust-parser/src/main.rs:5:34
+  |
+5 | use crate::parse::{parse_by_syn, parse_by_treesitter};
+  |                                  ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: function `get_parser` is never used
+ --> rust-parser/src/parse/parse_treesitter.rs:6:4
+  |
+6 | fn get_parser() -> Parser {
+  |    ^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `parse_by_treesitter` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:12:8
+   |
+12 | pub fn parse_by_treesitter() {
+   |        ^^^^^^^^^^^^^^^^^^^
+
+warning: function `walk_tree` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:50:4
+   |
+50 | fn walk_tree(node: Node, level: usize, callback: &impl Fn(Node, usize) -> ()) {
+   |    ^^^^^^^^^
+
+warning: function `print_node` is never used
+  --> rust-parser/src/parse/parse_treesitter.rs:64:4
+   |
+64 | fn print_node(node: Node, level: usize) {
+   |    ^^^^^^^^^^
+
+warning: `rust-parser` (bin "rust-parser") generated 5 warnings (run `cargo fix --bin "rust-parser"` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 0.03s
+     Running `/home/hieucien/Workspace/ast/rust-parser/target/release/rust-parser --input /home/hieucien/Workspace/ast/rust-parser/rust-parser/tests/projects/yew --output /home/hieucien/Workspace/ast/rust-parser/rust-parser/output/yew --stderr --text --json --cargo-toml`

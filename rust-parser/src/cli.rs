@@ -7,6 +7,7 @@ pub struct Args {
     pub abs_output_dir: String,
     pub src_only: bool,
     pub write_stdout: bool,
+    pub write_stderr: bool,
     pub write_text: bool,
     pub write_json: bool,
     pub write_cargo_toml: bool,
@@ -41,6 +42,12 @@ fn get_command() -> Command {
         )
         .arg(
             arg!(
+                --stderr <OUTPUT_FOLDER> "Write error to stderr"
+            )
+            .action(ArgAction::SetTrue),
+        )
+        .arg(
+            arg!(
                 --text <OUTPUT_FOLDER> "Write output as text"
             )
             .action(ArgAction::SetTrue),
@@ -59,22 +66,22 @@ fn get_command() -> Command {
         )
 }
 
-fn get_valid_folder(s: &str, not_exist_ok: bool) -> Option<String> {
+fn get_valid_folder(s: &str, not_exist_ok: bool) -> Result<String, String> {
     let Ok(cwd) = env::current_dir() else {
-        return None;
+        return Err("Failed to get current working directory".to_owned());
     };
 
     let full_path = cwd.join(Path::new(s));
 
     if !full_path.exists() && !not_exist_ok {
-        return None;
+        return Err(format!("Folder does not exist: {:#?}", full_path));
     }
 
     if full_path.exists() && !full_path.is_dir() {
-        return None;
+        return Err(format!("Path is not a folder: {:#?}", full_path));
     }
 
-    Some(full_path.to_str().unwrap().to_owned())
+    Ok(full_path.to_str().unwrap().to_owned())
 }
 
 pub fn get_args() -> Args {
@@ -96,6 +103,10 @@ pub fn get_args() -> Args {
         .get_one::<bool>("stdout")
         .expect("Failed to get stdout flag")
         .to_owned();
+    let write_stderr = matches
+        .get_one::<bool>("stderr")
+        .expect("Failed to get stderr flag")
+        .to_owned();
     let write_text = matches
         .get_one::<bool>("text")
         .expect("Failed to get text flag")
@@ -109,14 +120,14 @@ pub fn get_args() -> Args {
         .expect("Failed to get cargo-toml flag")
         .to_owned();
 
-    let Some(abs_input_dir) = get_valid_folder(&input_dir, false) else {
+    let Ok(abs_input_dir) = get_valid_folder(&input_dir, false) else {
         panic!(
             "Input directory does not exist or is not a folder: {:#?}",
             input_dir
         );
     };
 
-    let Some(abs_output_dir) = get_valid_folder(&output_dir, true) else {
+    let Ok(abs_output_dir) = get_valid_folder(&output_dir, true) else {
         panic!("Output must be a folder: {:#?}", output_dir);
     };
 
@@ -125,6 +136,7 @@ pub fn get_args() -> Args {
         abs_output_dir,
         src_only,
         write_stdout,
+        write_stderr,
         write_text,
         write_json,
         write_cargo_toml,

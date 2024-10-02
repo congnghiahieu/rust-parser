@@ -1,0 +1,44 @@
+[package]
+name = "syn-serde"
+version = "0.3.1" #publish:version
+edition = "2021"
+rust-version = "1.56"
+license = "Apache-2.0 OR MIT"
+repository = "https://github.com/taiki-e/syn-serde"
+keywords = ["serde", "serialization", "syn"]
+categories = ["development-tools::procedural-macro-helpers", "parser-implementations"]
+exclude = ["/.*", "/tools"]
+description = """
+Library to serialize and deserialize Syn syntax trees.
+"""
+
+[package.metadata.docs.rs]
+all-features = true
+targets = ["x86_64-unknown-linux-gnu"]
+
+[package.metadata.cargo_check_external_types]
+# The following are external types that are allowed to be exposed in our public API.
+allowed_external_types = [
+    "serde_json::*",
+    "serde::*",
+]
+
+[lib]
+doc-scrape-examples = false
+
+[features]
+json = ["serde_json"]
+
+# Note: proc-macro2, serde, serde_json, and syn are public dependencies.
+[dependencies]
+proc-macro2 = { version = "1.0.60", default-features = false }
+serde = "1.0.113"
+serde_derive = "1.0.113"
+syn = { version = "2", default-features = false, features = ["full"] }
+
+serde_json = { version = "1", optional = true }
+
+[dev-dependencies]
+quote = "1"
+serde_json = "1"
+syn = { version = "2", default-features = false, features = ["parsing", "printing", "full", "extra-traits"] }

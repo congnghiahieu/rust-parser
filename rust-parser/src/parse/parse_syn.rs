@@ -33,7 +33,11 @@ pub fn parse_by_syn(args: &Args) {
         }
 
         if args.write_json {
-            let out_json = syn_serde::json::to_string_pretty(&ast);
+            let out_json = if args.pretty {
+                syn_serde::json::to_string_pretty(&ast)
+            } else {
+                syn_serde::json::to_string(&ast)
+            };
             write_output_format(
                 &out_json,
                 abs_filepath,
@@ -60,7 +64,11 @@ pub fn parse_by_syn(args: &Args) {
         let manifest = parse_result.unwrap();
 
         if args.write_cargo_toml {
-            let out_json = serde_json::to_string_pretty(&manifest).unwrap();
+            let out_json = if args.pretty {
+                serde_json::to_string_pretty(&manifest).unwrap()
+            } else {
+                serde_json::to_string(&manifest).unwrap()
+            };
             write_output_format(
                 &out_json,
                 abs_filepath,

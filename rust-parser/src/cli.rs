@@ -11,6 +11,7 @@ pub struct Args {
     pub write_text: bool,
     pub write_json: bool,
     pub write_cargo_toml: bool,
+    pub pretty: bool,
 }
 
 fn get_command() -> Command {
@@ -61,6 +62,12 @@ fn get_command() -> Command {
         .arg(
             arg!(
                 --"cargo-toml" <OUTPUT_FOLDER> "Write cargo.toml to output"
+            )
+            .action(ArgAction::SetTrue),
+        )
+        .arg(
+            arg!(
+                --pretty <OUTPUT_FOLDER> "Write text, json in pretty format"
             )
             .action(ArgAction::SetTrue),
         )
@@ -119,6 +126,10 @@ pub fn get_args() -> Args {
         .get_one::<bool>("cargo-toml")
         .expect("Failed to get cargo-toml flag")
         .to_owned();
+    let pretty = matches
+        .get_one::<bool>("pretty")
+        .expect("Failed to get pretty flag")
+        .to_owned();
 
     let Ok(abs_input_dir) = get_valid_folder(&input_dir, false) else {
         panic!(
@@ -140,5 +151,6 @@ pub fn get_args() -> Args {
         write_text,
         write_json,
         write_cargo_toml,
+        pretty,
     }
 }

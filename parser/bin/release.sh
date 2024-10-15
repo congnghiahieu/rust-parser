@@ -17,7 +17,7 @@ for folder in $(ls $TEST_PROJECTS_DIR); do
   # Capture the start time for each cargo run command
   folder_start_time=$(date +%s)
 
-  $ROOT_DIR/target/release/rust-parser --input "$TEST_PROJECTS_DIR/$folder" --output "$OUT_DIR/$folder" --stdout --json --cargo-toml --pretty $@
+  $ROOT_DIR/target/release/parser --input "$TEST_PROJECTS_DIR/$folder" --output "$OUT_DIR/$folder" --stdout --json --cargo-toml --pretty $@
   # --stdout --json --cargo-toml $@
 
   if [ $? -ne 0 ]; then

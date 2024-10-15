@@ -1,7 +1,7 @@
 [workspace]
 
 members = [
-    "rust-parser",
+    "parser",
     "syn-serde",
 ]
 resolver="2"

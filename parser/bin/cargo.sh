@@ -15,7 +15,7 @@ for folder in $(ls $TEST_PROJECTS_DIR); do
   # Capture the start time for each cargo run command
   folder_start_time=$(date +%s)
 
-  cargo run --release -- --input "$TEST_PROJECTS_DIR/$folder" --output "$OUT_DIR/$folder" --stderr --text --json --cargo-toml --pretty $@
+  cargo run --release -- --input "$TEST_PROJECTS_DIR/$folder" --output "$OUT_DIR/$folder" --stdout --stderr --json --cargo-toml --pretty $@
 
   if [ $? -ne 0 ]; then
     echo "Failed to run the parser for $folder"

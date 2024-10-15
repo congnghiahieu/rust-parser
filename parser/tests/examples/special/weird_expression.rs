@@ -1,7 +1,6 @@
 //@ run-pass
 
 #![feature(coroutines)]
-
 #![allow(non_camel_case_types)]
 #![allow(dead_code)]
 #![allow(redundant_semicolons)]
@@ -10,7 +9,6 @@
 #![allow(uncommon_codepoints, confusable_idents)]
 #![allow(unused_imports)]
 #![allow(unreachable_patterns)]
-
 #![recursion_limit = "256"]
 
 extern crate core;
@@ -20,19 +18,23 @@ use std::ops::Deref;
 
 // Just a grab bag of stuff that you wouldn't want to actually write.
 
-fn strange() -> bool { let _x: bool = return true; }
+fn strange() -> bool {
+    let _x: bool = return true;
+}
 
 fn funny() {
-    fn f(_x: ()) { }
+    fn f(_x: ()) {}
     f(return);
 }
 
 fn what() {
     fn the(x: &Cell<bool>) {
-        return while !x.get() { x.set(true); };
+        return while !x.get() {
+            x.set(true);
+        };
     }
     let i = &Cell::new(false);
-    let dont = {||the(i)};
+    let dont = { || the(i) };
     dont();
     assert!((i.get()));
 }
@@ -44,18 +46,20 @@ fn zombiejesus() {
                 match (return) {
                     1 => {
                         if (return) {
-                            return
+                            return;
                         } else {
-                            return
+                            return;
                         }
                     }
-                    _ => { return }
+                    _ => return,
                 };
             } else if (return) {
                 return;
             }
         }
-        if (return) { break; }
+        if (return) {
+            break;
+        }
     }
 }
 
@@ -68,25 +72,43 @@ fn notsure() {
 }
 
 fn canttouchthis() -> usize {
-    fn p() -> bool { true }
+    fn p() -> bool {
+        true
+    }
     let _a = (assert!((true)) == (assert!(p())));
     let _c = (assert!((p())) == ());
     let _b: bool = (println!("{}", 0) == (return 0));
 }
 
 fn angrydome() {
-    loop { if break { } }
+    loop {
+        if break {}
+    }
     let mut i = 0;
-    loop { i += 1; if i == 1 { match (continue) { 1 => { }, _ => panic!("wat") } }
-      break; }
+    loop {
+        i += 1;
+        if i == 1 {
+            match (continue) {
+                1 => {}
+                _ => panic!("wat"),
+            }
+        }
+        break;
+    }
 }
 
-fn evil_lincoln() { let _evil: () = println!("lincoln"); }
+fn evil_lincoln() {
+    let _evil: () = println!("lincoln");
+}
 
 fn dots() {
-    assert_eq!(String::from(".................................................."),
-               format!("{:?}", .. .. .. .. .. .. .. .. .. .. .. .. ..
-                               .. .. .. .. .. .. .. .. .. .. .. ..));
+    assert_eq!(
+        String::from(".................................................."),
+        format!(
+            "{:?}",
+            .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..
+        )
+    );
 }
 
 fn u8(u8: u8) {
@@ -112,17 +134,22 @@ fn u8(u8: u8) {
 }
 
 fn fishy() {
-    assert_eq!(String::from("><>"),
-               String::<>::from::<>("><>").chars::<>().rev::<>().collect::<String>());
+    assert_eq!(
+        String::from("><>"),
+        String::from("><>").chars().rev().collect::<String>()
+    );
 }
 
 fn union() {
-    union union<'union> { union: &'union union<'union>, }
+    union union<'union> {
+        union: &'union mut union<'union>,
+    }
 }
 
 fn special_characters() {
-    let val = !((|(..):(_,_),(|__@_|__)|__)((&*"\\",'🤔')/**/,{})=={&[..=..][..];})//
-    ;
+    let val = !((|(..): (_, _), (__ @ _ | __)| __)((&*"\\", '🤔') /**/, {}) == {
+        &[..= ..][..];
+    });
     assert!(!val);
 }
 
@@ -138,15 +165,15 @@ fn punch_card() -> impl std::fmt::Debug {
 
 fn r#match() {
     let val: () = match match match match match () {
-        () => ()
+        () => (),
     } {
-        () => ()
+        () => (),
     } {
-        () => ()
+        () => (),
     } {
-        () => ()
+        () => (),
     } {
-        () => ()
+        () => (),
     };
     assert_eq!(val, ());
 }
@@ -159,14 +186,26 @@ fn i_yield() {
 
 fn match_nested_if() {
     let val = match () {
-        () if if if if true {true} else {false} {true} else {false} {true} else {false} => true,
+        () if if if if true { true } else { false } {
+            true
+        } else {
+            false
+        } {
+            true
+        } else {
+            false
+        } =>
+        {
+            true
+        }
         _ => false,
     };
     assert!(val);
 }
 
 fn monkey_barrel() {
-    let val: () = ()=()=()=()=()=()=()=()=()=()=()=()=()=()=()=()=()=()=()=()=()=()=()=()=();
+    let val: () = () = () = () = () = () = () = () =
+        () = () = () = () = () = () = () = () = () = () = () = () = () = () = () = () = () = ();
     assert_eq!(val, ());
 }
 
@@ -176,9 +215,12 @@ fn 𝚌𝚘𝚗𝚝𝚒𝚗𝚞𝚎() {
         let 𝚛𝚎𝚝𝚞𝚛𝚗 = 42;
         return 𝚛𝚎𝚝𝚞𝚛𝚗;
     }
-    assert_eq!(loop {
-        break 𝚋𝚛𝚎𝚊𝚔 ();
-    }, 42);
+    assert_eq!(
+        loop {
+            break 𝚋𝚛𝚎𝚊𝚔();
+        },
+        42
+    );
 }
 
 fn function() {
@@ -189,7 +231,7 @@ fn function() {
             &((|| foo) as _)
         }
     }
-    let foo = foo () ()() ()()() ()()()() ()()()()();
+    let foo = foo()()()()()()()()()()()()()()();
 }
 
 fn bathroom_stall() {
@@ -200,25 +242,19 @@ fn bathroom_stall() {
 
 fn closure_matching() {
     let x = |_| Some(1);
-    let (|x| x) = match x(..) {
-        |_| Some(2) => |_| Some(3),
-        |_| _ => unreachable!(),
+    let (x | x) = match x(..) {
+        _ | Some(2) => |_| Some(3),
+        _ | _ => unreachable!(),
     };
     assert!(matches!(x(..), |_| Some(4)));
 }
 
-fn semisemisemisemisemi() {
-    ;;;;;;; ;;;;;;; ;;;    ;;; ;;
-    ;;      ;;      ;;;;  ;;;; ;;
-    ;;;;;;; ;;;;;   ;; ;;;; ;; ;;
-         ;; ;;      ;;  ;;  ;; ;;
-    ;;;;;;; ;;;;;;; ;;      ;; ;;
-}
+fn semisemisemisemisemi() {}
 
 fn useful_syntax() {
-    use {{std::{{collections::{{HashMap}}}}}};
-    use ::{{{{core}, {std}}}};
-    use {{::{{core as core2}}}};
+    use std::collections::HashMap;
+    use ::core as core2;
+    use ::{core, std};
 }
 
 fn infcx() {
@@ -233,26 +269,13 @@ fn infcx() {
 
 fn return_already() -> impl std::fmt::Debug {
     loop {
-        return !!!!!!!
-        break !!!!!!1111
+        return !!!!!!!break !!!!!!1111;
     }
 }
 
 fn fake_macros() -> impl std::fmt::Debug {
     loop {
-        if! {
-            match! (
-                break! {
-                    return! {
-                        1337
-                    }
-                }
-            )
-
-            {}
-        }
-
-        {}
+        if !{ match !(break !{ return !{ 1337 } }) {} } {}
     }
 }
 

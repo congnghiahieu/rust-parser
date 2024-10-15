@@ -72,7 +72,7 @@ fn call_unsafe_function() {
 }
 
 // Implementing an unsafe trait
-unsafe trait UnsafeTrait {
+pub unsafe trait UnsafeTrait {
     fn unsafe_method(&self);
 }
 

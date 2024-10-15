@@ -1,0 +1,51 @@
+[submodule "parser/parser/tests/projects/axum"]
+	path = parser/parser/tests/projects/axum
+	url = https://github.com/tokio-rs/axum.git
+[submodule "parser/parser/tests/projects/actix-web"]
+	path = parser/parser/tests/projects/actix-web
+	url = https://github.com/actix/actix-web.git
+[submodule "parser/parser/tests/projects/yew"]
+	path = parser/parser/tests/projects/yew
+	url = https://github.com/yewstack/yew.git
+[submodule "parser/tests/projects/axum"]
+	path = parser/tests/projects/axum
+	url = https://github.com/tokio-rs/axum.git
+[submodule "parser/tests/projects/actix-web"]
+	path = parser/tests/projects/actix-web
+	url = https://github.com/actix/actix-web.git
+[submodule "parser/tests/projects/yew"]
+	path = parser/tests/projects/yew
+	url = https://github.com/yewstack/yew.git
+[submodule "parser/tests/projects/sea-query"]
+	path = parser/tests/projects/sea-query
+	url = https://github.com/SeaQL/sea-query.git
+[submodule "parser/tests/projects/tokio"]
+	path = parser/tests/projects/tokio
+	url = https://github.com/tokio-rs/tokio.git
+[submodule "parser/tests/projects/sea-orm"]
+	path = parser/tests/projects/sea-orm
+	url = https://github.com/SeaQL/sea-orm.git
+[submodule "parser/tests/projects/Rocket"]
+	path = parser/tests/projects/Rocket
+	url = https://github.com/rwf2/Rocket.git
+[submodule "parser/tests/projects/json"]
+	path = parser/tests/projects/json
+	url = https://github.com/serde-rs/json.git
+[submodule "parser/tests/projects/serde"]
+	path = parser/tests/projects/serde
+	url = https://github.com/serde-rs/serde.git
+[submodule "parser/tests/projects/diesel"]
+	path = parser/tests/projects/diesel
+	url = https://github.com/diesel-rs/diesel.git
+[submodule "parser/tests/projects/dioxus"]
+	path = parser/tests/projects/dioxus
+	url = https://github.com/DioxusLabs/dioxus.git
+[submodule "parser/tests/projects/ratatui"]
+	path = parser/tests/projects/ratatui
+	url = https://github.com/ratatui/ratatui.git
+[submodule "parser/tests/projects/tauri"]
+	path = parser/tests/projects/tauri
+	url = https://github.com/tauri-apps/tauri.git
+[submodule "parser/tests/projects/bevy"]
+	path = parser/tests/projects/bevy
+	url = https://github.com/bevyengine/bevy.git

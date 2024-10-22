@@ -1,5 +1,6 @@
 #! /bin/env bash
 
+git submodule add https://github.com/congnghiahieu/syn-serde.git syn-serde
 git submodule add https://github.com/tokio-rs/axum.git tests/projects/axum
 git submodule add https://github.com/actix/actix-web.git tests/projects/actix-web
 git submodule add https://github.com/yewstack/yew.git tests/projects/yew

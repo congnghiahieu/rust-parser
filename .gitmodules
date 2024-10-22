@@ -1,51 +1,45 @@
-[submodule "parser/parser/tests/projects/axum"]
-	path = parser/parser/tests/projects/axum
+[submodule "syn-serde"]
+	path = syn-serde
+	url = https://github.com/congnghiahieu/syn-serde.git
+[submodule "tests/projects/axum"]
+	path = tests/projects/axum
 	url = https://github.com/tokio-rs/axum.git
-[submodule "parser/parser/tests/projects/actix-web"]
-	path = parser/parser/tests/projects/actix-web
+[submodule "tests/projects/actix-web"]
+	path = tests/projects/actix-web
 	url = https://github.com/actix/actix-web.git
-[submodule "parser/parser/tests/projects/yew"]
-	path = parser/parser/tests/projects/yew
+[submodule "tests/projects/yew"]
+	path = tests/projects/yew
 	url = https://github.com/yewstack/yew.git
-[submodule "parser/tests/projects/axum"]
-	path = parser/tests/projects/axum
-	url = https://github.com/tokio-rs/axum.git
-[submodule "parser/tests/projects/actix-web"]
-	path = parser/tests/projects/actix-web
-	url = https://github.com/actix/actix-web.git
-[submodule "parser/tests/projects/yew"]
-	path = parser/tests/projects/yew
-	url = https://github.com/yewstack/yew.git
-[submodule "parser/tests/projects/sea-query"]
-	path = parser/tests/projects/sea-query
+[submodule "tests/projects/sea-query"]
+	path = tests/projects/sea-query
 	url = https://github.com/SeaQL/sea-query.git
-[submodule "parser/tests/projects/tokio"]
-	path = parser/tests/projects/tokio
+[submodule "tests/projects/tokio"]
+	path = tests/projects/tokio
 	url = https://github.com/tokio-rs/tokio.git
-[submodule "parser/tests/projects/sea-orm"]
-	path = parser/tests/projects/sea-orm
+[submodule "tests/projects/sea-orm"]
+	path = tests/projects/sea-orm
 	url = https://github.com/SeaQL/sea-orm.git
-[submodule "parser/tests/projects/Rocket"]
-	path = parser/tests/projects/Rocket
+[submodule "tests/projects/Rocket"]
+	path = tests/projects/Rocket
 	url = https://github.com/rwf2/Rocket.git
-[submodule "parser/tests/projects/json"]
-	path = parser/tests/projects/json
+[submodule "tests/projects/json"]
+	path = tests/projects/json
 	url = https://github.com/serde-rs/json.git
-[submodule "parser/tests/projects/serde"]
-	path = parser/tests/projects/serde
+[submodule "tests/projects/serde"]
+	path = tests/projects/serde
 	url = https://github.com/serde-rs/serde.git
-[submodule "parser/tests/projects/diesel"]
-	path = parser/tests/projects/diesel
+[submodule "tests/projects/diesel"]
+	path = tests/projects/diesel
 	url = https://github.com/diesel-rs/diesel.git
-[submodule "parser/tests/projects/dioxus"]
-	path = parser/tests/projects/dioxus
+[submodule "tests/projects/dioxus"]
+	path = tests/projects/dioxus
 	url = https://github.com/DioxusLabs/dioxus.git
-[submodule "parser/tests/projects/ratatui"]
-	path = parser/tests/projects/ratatui
+[submodule "tests/projects/ratatui"]
+	path = tests/projects/ratatui
 	url = https://github.com/ratatui/ratatui.git
-[submodule "parser/tests/projects/tauri"]
-	path = parser/tests/projects/tauri
+[submodule "tests/projects/tauri"]
+	path = tests/projects/tauri
 	url = https://github.com/tauri-apps/tauri.git
-[submodule "parser/tests/projects/bevy"]
-	path = parser/tests/projects/bevy
+[submodule "tests/projects/bevy"]
+	path = tests/projects/bevy
 	url = https://github.com/bevyengine/bevy.git

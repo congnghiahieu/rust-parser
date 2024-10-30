@@ -6,7 +6,7 @@ TEST_PROJECTS_DIR="$ROOT_DIR/tests/projects"
 OUT_DIR="$ROOT_DIR/output"
 NUMBER_OF_TEST_PROJECTS=$(ls $TEST_PROJECTS_DIR | wc -l)
 
-rm -rf $OUT_DIR
+# rm -rf $OUT_DIR
 # cargo build --release --quiet
 
 # Capture the start time for the entire script

@@ -471,3 +471,52 @@
   1. The unsafe keyword https://doc.rust-lang.org/reference/unsafe-keyword.html
 
 - Scoping rules https://doc.rust-lang.org/stable/rust-by-example/scope.html
+
+# Difference syntax in rust
+
+- if let
+- let else
+- while let
+- lifetime
+- break return
+- macro không lấy được AST mà các ký tự tồn tại dưới dạng token (literal)
+- Chưa xử lý được QSelf, vì QSelf trong AST không phải là 1 cây độc lập mà phải đi với Path
+- Chưa xử lý được AngleBracketedGenericArguments, ParenthesizedGenericArguments là node con của Path
+- Chưa xử lý "rest" trong ExprStruct, PatStruct
+
+# Done file
+
+- `tests/examples/expressions/if/if_else.rs`
+- `tests/examples/expressions/if/if_let.rs`
+- `tests/examples/expressions/if/let_else.rs`
+- `tests/examples/expressions/loop/for_iter.rs`
+- `tests/examples/expressions/loop/for_range.rs`
+- `tests/examples/expressions/loop/loop.rs`
+- `tests/examples/expressions/loop/while.rs`
+- `tests/examples/expressions/loop/while_let.rs`
+- `tests/examples/expressions/match/guards.rs`
+- `tests/examples/expressions/match/binding.rs`
+- `tests/examples/expressions/match/destructuring/array.rs`
+- `tests/examples/expressions/match/destructuring/enum.rs`
+- `tests/examples/expressions/match/destructuring/pointers.rs`
+- `tests/examples/expressions/match/destructuring/struct.rs`
+- `tests/examples/expressions/match/destructuring/tuple.rs`
+- `tests/examples/expressions/array.rs`
+- `tests/examples/expressions/await.rs`
+- `tests/examples/expressions/block.rs`
+- `tests/examples/expressions/closure.rs`
+- `tests/examples/expressions/field_access.rs`
+- `tests/examples/expressions/function_call.rs` (có QSelf chưa xử lý)
+- `tests/examples/expressions/grouped.rs`
+- `tests/examples/expressions/literal.rs`
+- `tests/examples/expressions/method_call.rs`
+- `tests/examples/expressions/operator.rs` (có QSelf chưa xử lý)
+- `tests/examples/expressions/range.rs`
+- `tests/examples/expressions/return.rs`
+- `tests/examples/expressions/struct.rs` (có rest chưa xử lý được)
+- `tests/examples/expressions/tuple.rs`
+- `tests/examples/expressions/underscore.rs`
+- `tests/examples/enums/simple.rs`
+- `tests/examples/enums/discriminator.rs`
+- `tests/examples/attributes/meta_item.rs`
+- `tests/examples/attributes/simple.rs`

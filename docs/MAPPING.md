@@ -483,6 +483,16 @@
 - Chưa xử lý được QSelf, vì QSelf trong AST không phải là 1 cây độc lập mà phải đi với Path
 - Chưa xử lý được AngleBracketedGenericArguments, ParenthesizedGenericArguments là node con của Path
 - Chưa xử lý "rest" trong ExprStruct, PatStruct
+- Chưa xử lý được kiểu &Self (không giải được) (có ý tưởng giải là trước đi đi vào thì set 1 cái biến &Self cụ thể là gì). Về cơ bản là giải quyết bài toán vào scope, vào name space, vào block
+- Chưa xử lý được bài toán vào module (mod)
+- Chưa xử lý được CFG, PDG
+- Chưa xử lý được local (Xét 1 flag local)
+- Type parameter, Type argument, Type chưa ref được tới nhau
+- Chưa xử lý được method_ref, type_ref, path_ref. Phải cần học đến semantic analysis
+- Chưa xử lý được function, hay các kiểu liên quan đến ABI (Extern)
+- Type ref hiện tại bị cụt, có thể cân nhắc trỏ đến toàn bộ cây của path
+- Chưa xử lý được vấn đề cùng và ngoài scope
+- Chưa có constructor cho Struct Unit, Struct Tuple, Struct Struct
 
 # Done file
 
@@ -520,3 +530,28 @@
 - `tests/examples/enums/discriminator.rs`
 - `tests/examples/attributes/meta_item.rs`
 - `tests/examples/attributes/simple.rs`
+
+- `tests/examples/functions/simple.rs`
+- `tests/examples/functions/diverging.rs`
+- `tests/examples/functions/methods.rs`
+- `tests/examples/functions/hof.rs`
+- `tests/examples/functions/all.rs` (Type Parameter chưa ref, ABI)
+- `tests/examples/functions/closures/simple.rs`
+- `tests/examples/functions/closures/move.rs`
+- `tests/examples/functions/closures/input_functions.rs` (Chưa xử lý được method_ref, type_ref, path_ref. Phải cần học đến semantic analysis)
+- `tests/examples/functions/closures/capturing.rs`
+- `tests/examples/functions/closures/as_input_parameters.rs`
+- `tests/examples/functions/closures/as_output_parameters.rs`
+- `tests/examples/generics/where.rs`
+- `tests/examples/generics/trait.rs`
+- `tests/examples/generics/multi_bound.rs`
+- `tests/examples/generics/impl.rs`
+- `tests/examples/generics/function.rs`
+- `tests/examples/generics/const_generic.rs`
+- `tests/examples/generics/bound.rs`
+- `tests/examples/generics/all.rs`
+- `tests/examples/impl/argument_type.rs`
+- `tests/examples/impl/generic_impl.rs`
+- `tests/examples/impl/return_type.rs`
+- `tests/examples/impl/trait_impl.rs`
+- `tests/examples/impl/inherent_impl.rs` (Chưa xử lý được vấn đề cùng và ngoài scope, Chưa có constructor cho Struct Unit, Struct Tuple, Struct Struct)

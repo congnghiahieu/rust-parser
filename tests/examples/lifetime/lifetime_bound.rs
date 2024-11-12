@@ -1,6 +1,6 @@
 // https://doc.rust-lang.org/reference/trait-bounds.html#lifetime-bounds
 
-fn f<'a, 'b>(x: &'a i32, mut y: &'b i32)
+fn f<'a, 'b, 'c, 'd: 'c>(x: &'a i32, mut y: &'b i32, z: &'c i32)
 where
     'a: 'b,
 {

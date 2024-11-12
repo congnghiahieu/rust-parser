@@ -493,6 +493,15 @@
 - Type ref hiện tại bị cụt, có thể cân nhắc trỏ đến toàn bộ cây của path
 - Chưa xử lý được vấn đề cùng và ngoài scope
 - Chưa có constructor cho Struct Unit, Struct Tuple, Struct Struct
+- Thử sửa lại path angle bracket để lấy được path ref đúng và generic argument
+- Ref được type argument đến type parameter (không khả thi)
+- Thử chuyển AstForType sang Type thay vì toàn bộ là TypeRef. Phân biệt rõ TypeDecl, Type
+- Gọi các module cùng file, khác file là chưa làm được. Scope làm được rồi nhưng module thì chưa (hay namespace khác nhau)
+- Xử lý ident đặc biệt như `self`, `super`, `Self`
+- Sửa lại methodParameterIn thành local node, ref được đến method parameter in
+- Cân nhắc có cần phân biệt METHOD_REF, IDENTIFIER hay không. Chỉ cần để là identifier và sau đó ref đến
+- Sửa lại `ItemType` có cạnh là alias of hoặc set alias name = ...
+- Kiểm tra lại mấy node `localNode()`
 
 # Done file
 
@@ -530,7 +539,6 @@
 - `tests/examples/enums/discriminator.rs`
 - `tests/examples/attributes/meta_item.rs`
 - `tests/examples/attributes/simple.rs`
-
 - `tests/examples/functions/simple.rs`
 - `tests/examples/functions/diverging.rs`
 - `tests/examples/functions/methods.rs`
@@ -555,3 +563,95 @@
 - `tests/examples/impl/return_type.rs`
 - `tests/examples/impl/trait_impl.rs`
 - `tests/examples/impl/inherent_impl.rs` (Chưa xử lý được vấn đề cùng và ngoài scope, Chưa có constructor cho Struct Unit, Struct Tuple, Struct Struct)
+- `tests/examples/lifetime/lifetime_bound.rs`
+- `tests/examples/lifetime/higher_ranked_lifetime.rs` (File rỗng)
+- `tests/examples/macro_rules/variadics.rs`
+- `tests/examples/macro_rules/simple.rs`
+- `tests/examples/macro_rules/dsl.rs`
+- `tests/examples/macro_rules/dry.rs`
+- `tests/examples/macro_rules/syntax/designators.rs`
+- `tests/examples/macro_rules/syntax/repeat.rs`
+- `tests/examples/macro_rules/syntax/overload.rs`
+- `tests/examples/modules/simple.rs`
+- `tests/examples/modules/struct_visibility.rs`
+- `tests/examples/modules/super_self.rs`
+- `tests/examples/modules/use.rs`
+- `tests/examples/modules/visibility.rs`
+- `tests/examples/paths/path_in_expression.rs`
+- `tests/examples/paths/qualified_path.rs`
+- `tests/examples/paths/canonical_path.rs`
+- `tests/examples/paths/simple_path.rs`
+- `tests/examples/proc_macro/attribute.rs`
+- `tests/examples/proc_macro/derive.rs`
+- `tests/examples/proc_macro/function_like.rs`
+- `tests/examples/statements/declaration_statement.rs`
+- `tests/examples/statements/expression_statement.rs`
+- `tests/examples/traits/super_trait.rs`
+- `tests/examples/traits/dyn.rs`
+- `tests/examples/traits/derive.rs`
+- `tests/examples/traits/associated_types.rs`
+- `tests/examples/traits/simple.rs`
+- `tests/examples/traits/iterator.rs`
+- `tests/examples/traits/operator_overloading.rs`
+- `tests/examples/traits/associated_constants.rs`
+- `tests/examples/traits/all.rs`
+- `tests/examples/traits/disambiguating_path.rs`
+- `tests/examples/traits/drop.rs`
+- `tests/examples/type_system/array.rs`
+- `tests/examples/type_system/union.rs`
+- `tests/examples/type_system/type_parameter.rs`
+- `tests/examples/type_system/never.rs`
+- `tests/examples/type_system/enum.rs`
+- `tests/examples/type_system/textual.rs`
+- `tests/examples/type_system/impl_trait.rs`
+- `tests/examples/type_system/inferred.rs`
+- `tests/examples/type_system/boolean.rs`
+- `tests/examples/type_system/numeric.rs`
+- `tests/examples/type_system/function_pointer.rs`
+- `tests/examples/type_system/tuple.rs`
+- `tests/examples/type_system/closure.rs`
+- `tests/examples/type_system/pointer.rs`
+- `tests/examples/type_system/trait_object.rs`
+- `tests/examples/type_system/struct.rs`
+- `tests/examples/type_system/slice.rs`
+- `tests/examples/types/casting.rs`
+- `tests/examples/types/inference.rs`
+- `tests/examples/types/aliasing.rs`
+- `tests/examples/types/literals.rs`
+- `tests/examples/use_declarations/undescrore_import.rs`
+- `tests/examples/use_declarations/visibility.rs`
+- `tests/examples/use_declarations/simple.rs`
+- `tests/examples/use_declarations/paths.rs`
+- `tests/examples/vibility_and_privacy/full.rs`
+- `tests/examples/vibility_and_privacy/pub_in.rs`
+- `tests/examples/vibility_and_privacy/basic.rs`
+- `tests/examples/vibility_and_privacy/reexport.rs`
+- `tests/examples/unions.rs`
+- `tests/examples/constant.rs`
+- `tests/examples/extern_crate.rs`
+- `tests/examples/unsafe.rs`
+- `tests/examples/extern_block.rs`
+- `tests/examples/static.rs`
+- `tests/examples/comments.rs`
+- `tests/examples/struct.rs`
+- `tests/examples/special/weird_expression.rs`
+- `tests/examples/special/ast.rs`
+- `tests/examples/patterns/destructuring/array.rs`
+- `tests/examples/patterns/destructuring/enum.rs`
+- `tests/examples/patterns/destructuring/pointer.rs`
+- `tests/examples/patterns/destructuring/struct.rs`
+- `tests/examples/patterns/destructuring/tuple.rs`
+- `tests/examples/patterns/grouped.rs`
+- `tests/examples/patterns/identifier.rs`
+- `tests/examples/patterns/literal.rs`
+- `tests/examples/patterns/loop.rs`
+- `tests/examples/patterns/or.rs`
+- `tests/examples/patterns/path.rs`
+- `tests/examples/patterns/range.rs`
+- `tests/examples/patterns/reference.rs`
+- `tests/examples/patterns/rest.rs`
+- `tests/examples/patterns/slice.rs`
+- `tests/examples/patterns/struct.rs`
+- `tests/examples/patterns/tuple.rs`
+- `tests/examples/patterns/tuple_struct.rs`
+- `tests/examples/patterns/wildcard.rs`

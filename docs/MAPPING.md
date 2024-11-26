@@ -472,37 +472,6 @@
 
 - Scoping rules https://doc.rust-lang.org/stable/rust-by-example/scope.html
 
-# Difference syntax in rust
-
-- if let
-- let else
-- while let
-- lifetime
-- break return
-- macro không lấy được AST mà các ký tự tồn tại dưới dạng token (literal)
-- Chưa xử lý được QSelf, vì QSelf trong AST không phải là 1 cây độc lập mà phải đi với Path
-- Chưa xử lý được AngleBracketedGenericArguments, ParenthesizedGenericArguments là node con của Path
-- Chưa xử lý "rest" trong ExprStruct, PatStruct
-- Chưa xử lý được kiểu &Self (không giải được) (có ý tưởng giải là trước đi đi vào thì set 1 cái biến &Self cụ thể là gì). Về cơ bản là giải quyết bài toán vào scope, vào name space, vào block
-- Chưa xử lý được bài toán vào module (mod)
-- Chưa xử lý được CFG, PDG
-- Chưa xử lý được local (Xét 1 flag local)
-- Type parameter, Type argument, Type chưa ref được tới nhau
-- Chưa xử lý được method_ref, type_ref, path_ref. Phải cần học đến semantic analysis
-- Chưa xử lý được function, hay các kiểu liên quan đến ABI (Extern)
-- Type ref hiện tại bị cụt, có thể cân nhắc trỏ đến toàn bộ cây của path
-- Chưa xử lý được vấn đề cùng và ngoài scope
-- Chưa có constructor cho Struct Unit, Struct Tuple, Struct Struct
-- Thử sửa lại path angle bracket để lấy được path ref đúng và generic argument
-- Ref được type argument đến type parameter (không khả thi)
-- Thử chuyển AstForType sang Type thay vì toàn bộ là TypeRef. Phân biệt rõ TypeDecl, Type
-- Gọi các module cùng file, khác file là chưa làm được. Scope làm được rồi nhưng module thì chưa (hay namespace khác nhau)
-- Xử lý ident đặc biệt như `self`, `super`, `Self`
-- Sửa lại methodParameterIn thành local node, ref được đến method parameter in
-- Cân nhắc có cần phân biệt METHOD_REF, IDENTIFIER hay không. Chỉ cần để là identifier và sau đó ref đến
-- Sửa lại `ItemType` có cạnh là alias of hoặc set alias name = ...
-- Kiểm tra lại mấy node `localNode()`
-
 # Done file
 
 - `tests/examples/expressions/if/if_else.rs`

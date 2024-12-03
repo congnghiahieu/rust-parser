@@ -43,3 +43,21 @@
 [submodule "tests/projects/bevy"]
 	path = tests/projects/bevy
 	url = https://github.com/bevyengine/bevy.git
+[submodule "tests/projects/alacritty"]
+	path = tests/projects/alacritty
+	url = https://github.com/alacritty/alacritty
+[submodule "tests/projects/bat"]
+	path = tests/projects/bat
+	url = https://github.com/sharkdp/bat
+[submodule "tests/projects/ripgrep"]
+	path = tests/projects/ripgrep
+	url = https://github.com/BurntSushi/ripgrep
+[submodule "tests/projects/starship"]
+	path = tests/projects/starship
+	url = https://github.com/starship/starship
+[submodule "tests/projects/fd"]
+	path = tests/projects/fd
+	url = https://github.com/sharkdp/fd
+[submodule "tests/projects/pingora"]
+	path = tests/projects/pingora
+	url = https://github.com/cloudflare/pingora

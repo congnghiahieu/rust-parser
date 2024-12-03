@@ -1,6 +1,7 @@
 #! /bin/env bash
 
 git submodule add https://github.com/congnghiahieu/syn-serde.git syn-serde
+
 git submodule add https://github.com/tokio-rs/axum.git tests/projects/axum
 git submodule add https://github.com/actix/actix-web.git tests/projects/actix-web
 git submodule add https://github.com/yewstack/yew.git tests/projects/yew
@@ -15,3 +16,9 @@ git submodule add https://github.com/DioxusLabs/dioxus.git tests/projects/dioxus
 git submodule add https://github.com/ratatui/ratatui.git tests/projects/ratatui
 git submodule add https://github.com/tauri-apps/tauri.git tests/projects/tauri
 git submodule add https://github.com/bevyengine/bevy.git tests/projects/bevy
+git submodule add https://github.com/alacritty/alacritty tests/projects/alacritty
+git submodule add https://github.com/sharkdp/bat tests/projects/bat
+git submodule add https://github.com/BurntSushi/ripgrep tests/projects/ripgrep
+git submodule add https://github.com/starship/starship tests/projects/starship
+git submodule add https://github.com/sharkdp/fd tests/projects/fd
+git submodule add https://github.com/cloudflare/pingora tests/projects/pingora

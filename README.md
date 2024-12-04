@@ -3,7 +3,11 @@
 - Run git sumodule to fetch `syn-serde` and rust repos in `tests/projects`
 
 ```bash
-chmod -R +x ./bin
+git submodule update --init
+```
 
-./bin/submodule.sh
+- Enable execute permission for `bin` folder
+
+```bash
+chmod -R +x ./bin
 ```

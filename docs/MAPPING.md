@@ -11,7 +11,7 @@
 | `BareFnArg`                      | `NewTypeRef`                                               |
 | `BareVariadic`                   | `NewMethodParameterIn`                                     |
 | `Block`                          | `NewBlock`                                                 |
-| `BoundLifetimes`                 | `Lifetime`                                                 |
+| `BoundLifetimes`                 | `NewLifetime`                                              |
 | `ConstParam`                     | `NewTypeParameter`                                         |
 | `Constraint`                     | `NewTypeArgument`                                          |
 | `ExprArray`                      | `NewCall`                                                  |
@@ -85,8 +85,8 @@
 | `ItemUnion`                      | `NewTypeDecl`                                              |
 | `ItemUse`                        | `NewImport`                                                |
 | `Label`                          | `NewJumpTarget`                                            |
-| `Lifetime`                       | `Lifetime`                                                 |
-| `LifetimeParam`                  | `LifetimeParameter`                                        |
+| `Lifetime`                       | `NewLifetime`                                              |
+| `LifetimeParam`                  | `NewLifetimeParameter`                                     |
 | `LitBool`                        | `NewLiteral`                                               |
 | `LitByte`                        | `NewLiteral`                                               |
 | `LitByteStr`                     | `NewLiteral`                                               |
@@ -119,13 +119,13 @@
 | `PatWild`                        | `NewIdentifier`                                            |
 | `Path`                           | `NewIdentifier` \| `NewTypeRef` \| `NewMethodRef`          |
 | `PathSegment`                    | `NewUnknown`                                               |
-| `PredicateLifetime`              | `LifetimeParameter`                                        |
+| `PredicateLifetime`              | `NewLifetimeParameter`                                     |
 | `PredicateType`                  | `NewTypeParameter`                                         |
 | `QSelf`                          | `NewUnknown`                                               |
 | `Receiver`                       | `NewMethodParameterIn`                                     |
 | `Signature`                      | `NewUnknown`                                               |
 | `StmtMacro`                      | `NewCall`                                                  |
-| `TraitBound`                     | `NewType` \| `Lifetime`                                    |
+| `TraitBound`                     | `NewType` \| `NewLifetime`                                 |
 | `TraitItemConst`                 | `NewLocal`                                                 |
 | `TraitItemFn`                    | `NewMethod`                                                |
 | `TraitItemMacro`                 | `NewCall`                                                  |
@@ -154,7 +154,7 @@
 | `Variadic`                       | `NewMethodParameterIn`                                     |
 | `Variant`                        | `NewMember`                                                |
 | `VisRestricted`                  | `NewModifier`                                              |
-| `WhereClause`                    | `LifetimeParameter` \| `NewTypeParameter`                  |
+| `WhereClause`                    | `NewLifetimeParameter` \| `NewTypeParameter`               |
 
 # Enum
 

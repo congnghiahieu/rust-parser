@@ -7,4 +7,4 @@ OUT_DIR="$ROOT_DIR/output"
 
 # rm -rf "$OUT_DIR"
 
-cargo run --release -- --input "$TEMP_DIR" --output "$OUT_DIR/temp" --stdout --json --cargo-toml --pretty
+cargo run --release -- --input "$TEMP_DIR" --output "$OUT_DIR/temp" --stdout --stderr --json --cargo-toml --pretty

@@ -1,6 +1,6 @@
 # Installation
 
-- Run git sumodule to fetch `syn-serde` and rust repos in `tests/projects`
+- Run git sumodule to fetch `syn-serde`
 
 ```bash
 git submodule update --init
@@ -10,4 +10,10 @@ git submodule update --init
 
 ```bash
 chmod -R +x ./bin
+```
+
+- Run this command to clone tests/projecs:
+
+```bash
+./bin/clone-projects.sh
 ```
